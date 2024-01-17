@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "milanesas"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "A group of tools to do exploratory analysis."
 authors = ["Torrez, Milton <torrez.mn@gmail.com>"]
-readme = "README.md"
+readme = ["docs/README.md"]
 packages = [
     { include = "milanesas" },  # For code in a custom directory named "mypackage"
 ]
+keywords = ["packaging", "data_science", "pandas"]
 
 
 [tool.poetry.dependencies]

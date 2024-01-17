@@ -1,0 +1,2 @@
+poetry publish -r testpypi --build --dry-run
+poetry version patch
