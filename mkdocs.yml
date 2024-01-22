@@ -1,1 +1,29 @@
-site_name: My Docs
+site_name: EDA Helper
+
+site_author: TorresMN
+
+site_url: https://your-domain.com/eda-helper (replace with your actual domain)
+
+nav:
+  - Home: index.md
+  - Installation: install.md
+  - Usage: usage.md
+  - API Reference: api.md
+  - Examples: examples.md
+  - Contributing: contributing.md
+
+theme: readthedocs
+
+plugins:
+  - markdown-it-py-renderer
+
+markdown_extensions:
+  - codehilite
+  - meta
+  - toc
+
+repo_url: https://github.com/TorrezMN/EDA_Helper
+
+edit_uri: /edit/master/docs/%s
+
+
