@@ -1,0 +1,1875 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>milanesas.eda_helper API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>milanesas.eda_helper</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import itertools
+import pandas as pd
+import random
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def random_hex():
+    # List of dark Material colors
+    dark_material_colors = [
+        &#34;#121212&#34;,
+        &#34;#1E88E5&#34;,
+        &#34;#00897B&#34;,
+        &#34;#39BBB0&#34;,
+        &#34;#26C6DA&#34;,
+        &#34;#42A5F5&#34;,
+        &#34;#64B5F6&#34;,
+        &#34;#9C27B0&#34;,
+        &#34;#E91E63&#34;,
+        &#34;#F44336&#34;,
+        &#34;#D81B60&#34;,
+        &#34;#880E4F&#34;,
+    ]
+
+    # Choose a random color from the list
+    random_color = random.choice(dark_material_colors)
+
+    return random_color
+
+
+def replace_column_content(df, col, repl):
+    &#34;&#34;&#34;Replaces values in a DataFrame column using a replacement dictionary.
+
+    Modifies a DataFrame column in-place by replacing values based on a
+    provided dictionary. The replacement dictionary maps original values to
+    their desired replacements. Regular expressions can be used for flexible
+    matching.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame to modify.
+        col (str): The name of the column to modify.
+        repl (dict): A dictionary containing replacement mappings, where keys
+            represent original values and values represent their replacements.
+
+    Raises:
+        ValueError: If the specified column does not exist in the DataFrame.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;genero&#39;: [&#39;HOMBRE&#39;, &#39;MUJER&#39;, &#39;NO COMPARTO&#39;]})
+        &gt;&gt;&gt; gen_repl = {
+        ...     &#34;HOMBRE&#34;: &#34;MAN&#34;,
+        ...     &#34;MUJER&#34;: &#34;WOMAN&#34;,
+        ...     &#34;NO COMPARTO&#34;: &#34;DONT SHARE&#34;,
+        ... }
+        &gt;&gt;&gt; replace_column_content(df, &#34;genero&#34;, gen_repl)
+        &gt;&gt;&gt; print(df)  # Output:
+                       genero
+        0                 MAN
+        1              WOMAN
+        2       DONT SHARE
+    &#34;&#34;&#34;
+
+    df[col].replace(
+        repl,
+        regex=True,
+        inplace=True,
+    )
+
+
+def get_percentage(value):
+    &#34;&#34;&#34;Formats a value as a percentage string.
+
+    Converts a numerical value into a percentage representation, rounded to the
+    nearest integer, and returns it as a formatted string with a percentage sign.
+
+    Args:
+        value (float): The numerical value to convert to a percentage.
+
+    Returns:
+        str: The formatted percentage string (e.g., &#34;42%&#34;).
+
+    Example:
+        &gt;&gt;&gt; percentage_string = get_percentage(0.4235)
+        &gt;&gt;&gt; print(percentage_string)  # Output: &#34;42%&#34;
+    &#34;&#34;&#34;
+    # Multiply the value by 100 to get the percentage.
+    percentage = value * 100
+
+    # Round the percentage to the nearest integer value.
+    percentage = round(percentage)
+
+    return f&#34;{percentage}%&#34;
+
+
+def percentage_to_normal(val):
+    &#34;&#34;&#34;Formats a Series of percentage values with rounding and percentage sign.
+
+    Converts a Series of values to percentages, rounds them to one decimal place,
+    and adds a percentage sign. The output is formatted as a string.
+
+    Args:
+        val (pandas.Series): A Series containing numerical values.
+
+    Returns:
+        pandas.Series: A Series with the same index as the input, but containing
+        formatted percentage strings.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; s = pd.Series([0.1234, 0.5678, 0.9012])
+        &gt;&gt;&gt; formatted_percentages = percentage_to_normal(s)
+        &gt;&gt;&gt; print(formatted_percentages)
+        0    12.3 %
+        1    56.8 %
+        2    90.1 %
+        dtype: object
+    &#34;&#34;&#34;
+
+    return val.mul(100).round(1).astype(str) + &#34; %&#34;
+
+
+def explode_pie(pie_size):
+    &#34;&#34;&#34;Generates a list of values to explode slices of a pie chart.
+
+    Creates a list of random values between 0.01 and 0.05, suitable for
+    visually exploding slices of a pie chart. The number of values in the
+    list is determined by the `pie_size` argument.
+
+    Args:
+        pie_size: An integer representing the number of slices in the pie chart.
+
+    Returns:
+        A list of floating-point values between 0.01 and 0.05, with a length
+        equal to `pie_size`.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; imp_df = pd.DataFrame({&#39;A&#39;: [10, 20, 30]})
+        &gt;&gt;&gt; explode_values = explode_pie(imp_df.size)
+        &gt;&gt;&gt; print(explode_values)  # Example output: [0.03546542, 0.01237543, 0.04892357]
+    &#34;&#34;&#34;
+    exp = [random.uniform(0.01, 0.05) for i in range(0, pie_size)]
+    return exp
+
+
+def get_column_uniques(df, col):
+    &#34;&#34;&#34;Prints unique values in a DataFrame column, handling semicolon-separated lists.
+
+    Prints the unique values found within a specified column of a DataFrame.
+    Treats semicolon-separated values within cells as individual elements.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame to analyze.
+        col (str): The name of the column to extract unique values from.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;exp_en_IT&#39;: [&#39;A;B;C&#39;, &#39;A;B&#39;, &#39;D&#39;]})
+        &gt;&gt;&gt; print_column_uniques(df, &#34;exp_en_IT&#34;)
+        {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;}
+    &#34;&#34;&#34;
+
+    return list(
+        set(itertools.chain.from_iterable([i.split(&#34;;&#34;) for i in df[col].dropna()]))
+    )
+
+
+def print_column_uniques(df, col):
+    print(set(itertools.chain.from_iterable([i.split(&#34;;&#34;) for i in df[col]])))
+
+
+def make_dataframe(df, col, cat_col, count_col):
+    # Drop all rows with float values from the DataFrame.
+    df = df.dropna(subset=[col])
+
+    # Get all unique categories in the column.
+    categories = set(
+        itertools.chain.from_iterable([i.split(&#34;;&#34;) for i in df[col].values])
+    )
+
+    # Create a dictionary to store the category counts.
+    category_counts = {}
+    for category in categories:
+        category_counts[category] = df[df[col].str.contains(category)].shape[0]
+
+    # Create a new DataFrame from the category counts dictionary.
+    new_df = pd.DataFrame(data=category_counts.items(), columns=[cat_col, count_col])
+
+    return new_df
+
+
+def make_df(df, col, x_label, y_label):
+    &#34;&#34;&#34;Creates a DataFrame counting occurrences of unique values (including those within semicolon-separated lists).
+
+    Constructs a new DataFrame that tallies the number of occurrences of each unique
+    value within a specified column of a given DataFrame. Handles cases where cells
+    contain multiple values separated by semicolons.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+        x_label (str): The label for the column containing unique values in the output DataFrame.
+        y_label (str): The label for the column containing counts in the output DataFrame.
+
+    Returns:
+        pandas.DataFrame: A new DataFrame with two columns:
+            - x_label: Contains the unique values from the specified column.
+            - y_label: Contains the counts of those values.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;educacion&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;C;B&#39;, &#39;D&#39;]})
+        &gt;&gt;&gt; new_df = make_df(df, &#34;educacion&#34;, &#34;categories&#34;, &#34;count&#34;)
+        &gt;&gt;&gt; print(new_df)
+       categories  count
+        0          A      2
+        1          B      2
+        2          C      1
+        3          D      1
+    &#34;&#34;&#34;
+
+    c = set(
+        itertools.chain.from_iterable(
+            [i.split(&#34;;&#34;) for i in df[col].value_counts().keys()]
+        )
+    )
+    cats = {i: 0 for i in c}
+    for i in c:
+        df[col] = df[col].fillna(False)
+        cats[i] = df[df[col].str.contains(i)].shape[0]
+
+    df = pd.DataFrame(
+        data=[i for i in cats.items()],
+        columns=[x_label.replace(&#34; &#34;, &#34;&#34;), y_label.replace(&#34; &#34;, &#34;&#34;)],
+    )  # .set_index(x_label.replace(&#39; &#39;,&#39;&#39;))
+
+    return df
+
+
+def get_normal_uniques_col_count(df, col):
+    &#34;&#34;&#34;Counts occurrences of unique values (including those within semicolon-separated lists), normalizing counts by row count.
+
+    Calculates the count of each unique value within a specified column of a DataFrame,
+    handling cases where cells contain multiple values separated by semicolons. Normalizes
+    the counts by dividing them by the total number of rows in the DataFrame.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+
+    Returns:
+        dict: A dictionary where keys represent unique values from the column and values
+            represent their normalized counts (fraction of total rows).
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;educacion&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;A;C&#39;, &#39;B&#39;]})
+        &gt;&gt;&gt; normalized_counts = get_normal_uniques_col_count(df, &#34;educacion&#34;)
+        &gt;&gt;&gt; print(normalized_counts)
+        {&#39;A&#39;: 0.75, &#39;B&#39;: 0.5, &#39;C&#39;: 0.25}
+    &#34;&#34;&#34;
+
+    c = set(
+        itertools.chain.from_iterable(
+            [i.split(&#34;;&#34;) for i in df[col].value_counts(normalize=True).keys()]
+        )
+    )
+    cats = {i: 0 for i in c}
+    for i in c:
+        cats[i] = df[df[col].str.contains(i)].shape[0]
+
+    return cats
+
+
+def get_uniques_col_count(df, col):
+    &#34;&#34;&#34;Counts occurrences of unique values (including those within semicolon-separated lists).
+
+    Calculates the count of each unique value within a specified column of a DataFrame,
+    handling cases where cells contain multiple values separated by semicolons.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+
+    Returns:
+        dict: A dictionary where keys represent unique values from the column and values
+            represent their counts.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;educacion&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;A;C&#39;, &#39;B&#39;]})
+        &gt;&gt;&gt; counts = get_uniques_col_count(df, &#34;educacion&#34;)
+        &gt;&gt;&gt; print(counts)
+        {&#39;A&#39;: 3, &#39;B&#39;: 2, &#39;C&#39;: 1}
+    &#34;&#34;&#34;
+    c = set(
+        itertools.chain.from_iterable(
+            [i.split(&#34;;&#34;) for i in df[col].value_counts().keys()]
+        )
+    )
+    cats = {i: 0 for i in c}
+    for i in c:
+        cats[i] = df[df[col].str.contains(i)].shape[0]
+
+    return cats
+
+
+def make_vertical_grouped_chart(df, g1, g2, col, labels, config):
+    &#34;&#34;&#34;Creates a vertical grouped bar chart comparing values between two groups.
+
+    Generates a vertical bar chart with two sets of bars, one for each group
+    (g1 and g2), comparing their counts for unique values in a specified column.
+    Labels, title, and other chart elements are customized using a configuration
+    dictionary.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the data.
+        g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
+        g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
+        col (str): The name of the column to compare values for.
+        labels (list): A list of unique values from the column to use as labels.
+        config (dict): A configuration dictionary with keys:
+            - title (str): The title of the chart.
+            - c1_label (str): The label for the first group&#39;s bars.
+            - c2_label (str): The label for the second group&#39;s bars.
+            - xlabel (str): The label for the x-axis.
+            - ylabel (str): The label for the y-axis.
+
+    Raises:
+        ValueError: If the specified column does not exist in the DataFrame.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;edad_actual&#39;: [25, 30, 30, 25, 35], &#39;gender&#39;: [&#39;MAN&#39;, &#39;WOMAN&#39;, &#39;MAN&#39;, &#39;MAN&#39;, &#39;WOMAN&#39;]})
+        &gt;&gt;&gt; gen = df.groupby(&#39;gender&#39;)
+        &gt;&gt;&gt; group_config = {
+        ...     &#39;title&#39;: &#34;edad_actual by Gender&#34;,
+        ...     &#39;c1_label&#39;: &#34;Hombres&#34;,
+        ...     &#39;c2_label&#39;: &#34;Mujeres&#34;,
+        ...     &#39;xlabel&#39;: &#34;edad_actual level&#34;,
+        ...     &#39;ylabel&#39;: &#34;Count&#34;
+        ... }
+        &gt;&gt;&gt; make_vertical_grouped_chart(df, gen.get_group(&#34;MAN&#34;), gen.get_group(&#34;WOMAN&#34;), &#34;edad_actual&#34;, df[&#34;edad_actual&#34;].unique(), group_config)
+    &#34;&#34;&#34;
+
+    g1_count = get_uniques_col_count(g1, col)
+    g2_count = get_uniques_col_count(g2, col)
+    labels = get_column_uniques(df, col)
+
+    # Values
+    g1_val = [g1_count.get(i, 0) for i in labels]
+    g2_val = [g2_count.get(i, 0) for i in labels]
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width / 2, g1_val, width, label=config.get(&#34;c1_label&#34;, &#34;&#34;))
+    rects2 = ax.bar(x + width / 2, g2_val, width, label=config.get(&#34;c2_label&#34;, &#34;&#34;))
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel(config.get(&#34;ylabel&#34;, &#34;&#34;))
+    ax.set_title(config.get(&#34;title&#34;, &#34;&#34;))
+    ax.set_xlabel(config.get(&#34;xlabel&#34;, &#34;&#34;))
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    def autolabel(rects):
+        &#34;&#34;&#34;Attach a text label above each bar in *rects*, displaying its height.&#34;&#34;&#34;
+        for rect in rects:
+            height = rect.get_height()
+
+            ax.annotate(
+                &#34;{}&#34;.format(height),
+                xy=(rect.get_x() + rect.get_width() / 2, height),
+                xytext=(0, 3),  # 3 points vertical offset
+                textcoords=&#34;offset points&#34;,
+                ha=&#34;center&#34;,
+                va=&#34;bottom&#34;,
+            )
+
+    autolabel(rects1)
+    autolabel(rects2)
+
+    fig.tight_layout()
+
+    plt.show()
+
+
+def make_horizontal_grouped_chart(df, g1, g2, col, labels, config):
+    &#34;&#34;&#34;Creates a horizontal grouped bar chart comparing values between two groups.
+
+    Generates a horizontal bar chart with two sets of bars, one for each group
+    (g1 and g2), comparing their counts for unique values in a specified column.
+    Labels, title, and other chart elements are customized using a configuration
+    dictionary.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the data.
+        g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
+        g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
+        col (str): The name of the column to compare values for.
+        labels (list): A list of unique values from the column to use as labels.
+        config (dict): A configuration dictionary with keys:
+            - title (str): The title of the chart.
+            - c1_label (str): The label for the first group&#39;s bars.
+            - c2_label (str): The label for the second group&#39;s bars.
+            - xlabel (str): The label for the x-axis.
+            - ylabel (str): The label for the y-axis.
+
+    Raises:
+        ValueError: If the specified column does not exist in the DataFrame.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;exp_en_IT&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;C&#39;, &#39;B&#39;], &#39;gender&#39;: [&#39;MAN&#39;, &#39;WOMAN&#39;, &#39;MAN&#39;, &#39;MAN&#39;, &#39;WOMAN&#39;]})
+        &gt;&gt;&gt; gen = df.groupby(&#39;gender&#39;)
+        &gt;&gt;&gt; group_config = {
+        ...     &#39;title&#39;: &#34;exp_en_IT by Gender&#34;,
+        ...     &#39;c1_label&#39;: &#34;MAN&#34;,
+        ...     &#39;c2_label&#39;: &#34;WOMAN&#34;,
+        ...     &#39;xlabel&#39;: &#34;Count&#34;,
+        ...     &#39;ylabel&#39;: &#34;exp_en_IT level&#34;
+        ... }
+        &gt;&gt;&gt; make_horizontal_grouped_chart(df, gen.get_group(&#34;MAN&#34;), gen.get_group(&#34;WOMAN&#34;), &#34;exp_en_IT&#34;, df[&#34;exp_en_IT&#34;].unique(), group_config)
+    &#34;&#34;&#34;
+    g1_count = get_uniques_col_count(g1, col)
+    g2_count = get_uniques_col_count(g2, col)
+    labels = get_column_uniques(df, col)
+
+    # Values
+    g1_val = [g1_count.get(i, 0) for i in labels]
+    g2_val = [g2_count.get(i, 0) for i in labels]
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.barh(x - width / 2, g1_val, width, label=config.get(&#34;c1_label&#34;, &#34;&#34;))
+    rects2 = ax.barh(x + width / 2, g2_val, width, label=config.get(&#34;c2_label&#34;, &#34;&#34;))
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel(config.get(&#34;xlabel&#34;, &#34;&#34;))
+    ax.set_title(config.get(&#34;title&#34;, &#34;&#34;))
+    ax.set_xlabel(config.get(&#34;ylabel&#34;, &#34;&#34;))
+    ax.set_yticks(x)
+    ax.set_yticklabels(labels)
+    ax.legend()
+
+    for k, v in enumerate(rects1):
+        height = v.get_height()
+
+        if len(labels) &gt;= 10:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 1.5
+        else:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 1
+
+        # x_pos = v.get_x() + v.get_width() / 2
+        y_pos = v.get_y() - height * 0.5
+        # y_pos = v.get_y() + height
+
+        # Add the annotation text
+        if int(g1_val[k]) != 0:
+            # x_pos = v.get_x() + v.get_width()
+            # ax.annotate(str(g1_val[k]), (x_pos, y_pos), ha=&#39;center&#39;, va=&#39;bottom&#39;)
+            ax.annotate(&#34;  &#34; + str(g1_val[k]), (x_pos, y_pos), ha=&#34;center&#34;, va=&#34;bottom&#34;)
+
+    for k, v in enumerate(rects2):
+        height = v.get_height()
+
+        # Set the position of the annotation text
+        # x_pos = v.get_x() + v.get_width()+1
+
+        if len(labels) &gt;= 10:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 1
+        else:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 0.5
+
+        # x_pos = v.get_x() + v.get_width() + 5
+        # x_pos = v.get_x() + v.get_width() / 2
+        y_pos = v.get_y() - height * 0.05 - 0.05
+        # y_pos = v.get_y() + height
+
+        # Add the annotation text
+        if int(g2_val[k]) != 0:
+            # ax.annotate(str(g2_val[k]), (x_pos, y_pos), ha=&#39;center&#39;, va=&#39;bottom&#39;)
+            ax.annotate(&#34;  &#34; + str(g2_val[k]), (x_pos, y_pos), ha=&#34;center&#34;, va=&#34;bottom&#34;)
+
+    fig.tight_layout()
+    plt.show()
+
+
+def make_normalized_df(df, col):
+    &#34;&#34;&#34;Creates a DataFrame with normalized counts of unique values, handling semicolon-separated lists.
+
+    Constructs a new DataFrame that displays the percentage of occurrences for each unique
+    value within a specified column of a given DataFrame. Values in cells can be separated
+    by semicolons, and each unique value within a semicolon-separated list is counted
+    separately.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+
+    Returns:
+        pandas.DataFrame: A new DataFrame with two columns:
+            - categories: Contains the unique values from the specified column.
+            - total count: Contains the percentage of occurrences for each unique value.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;imp_ed_formal&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;C;B&#39;, &#39;A;B&#39;]})
+        &gt;&gt;&gt; normalized_counts = make_normalized_df(df, &#34;imp_ed_formal&#34;)
+        &gt;&gt;&gt; print(normalized_counts)
+              total count
+        categories
+        A           50.0
+        B           50.0
+        C           25.0
+    &#34;&#34;&#34;
+    # Split each row content by &#34;;&#34;
+    df_split = df[col].str.split(&#34;;&#34;).explode()
+
+    # Count how many times each unique value appears in the column
+    df_counts = df_split.value_counts().reset_index(name=&#34;total count&#34;)
+
+    # Calculate the percentage of times each category appears in the column
+    df_counts[&#34;total count&#34;] = (
+        df_counts[&#34;total count&#34;] / df_counts[&#34;total count&#34;].sum() * 100
+    )
+
+    # Rename the columns
+    df_counts.columns = [&#34;categories&#34;, &#34;total count&#34;]
+
+    # Set the index to the &#39;categories&#39; column
+    df_counts = df_counts.set_index(&#34;categories&#34;)
+
+    return df_counts
+
+
+def make_horizontal_bar(df, col, titulo, x_label, y_label, legend):
+    &#34;&#34;&#34;Creates a horizontal bar chart for a specified column in a DataFrame.
+
+    Generates a horizontal bar chart that visualizes the counts of unique values
+    within a given column of a DataFrame.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to visualize.
+        titulo (str): The title of the chart.
+        x_label (str): The label for the x-axis.
+        y_label (str): The label for the y-axis.
+        legend (bool): True to display a legend, False to hide it.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;carr_especialidades&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;C&#39;, &#39;B&#39;]})
+        &gt;&gt;&gt; make_horizontal_bar(df, &#34;carr_especialidades&#34;, &#34;Carreras o especialidades&#34;, &#34;Total&#34;, &#34;Carreras / Especialidades&#34;, False)
+    &#34;&#34;&#34;
+    # Making a plot for this column.
+    fig = plt.figure(figsize=(9, 5))
+
+    aux_df = make_df(df, col, &#34;categorias&#34;, &#34;conteo&#34;)
+
+    aux_df_plot = aux_df.plot(kind=&#34;barh&#34;, title=f&#34;{titulo} \n&#34;, legend=legend)
+
+    aux_df_column_uniques = get_column_uniques(df, col)
+
+    aux_df_plot.set_yticks(
+        [k for k, v in enumerate(aux_df_column_uniques)], minor=False
+    )
+
+    aux_df_plot.set_yticklabels(
+        [i for i in aux_df_column_uniques],
+        fontdict=None,
+        minor=False,
+    )
+
+    aux_df_plot.set_xlabel(f&#34;{x_label}&#34;)
+    aux_df_plot.set_ylabel(f&#34;{y_label}&#34;)
+
+    cat_values = [i for i in aux_df.conteo.value_counts().keys()]
+
+    # Plot annotations.
+    for k, v in enumerate(cat_values):
+        aux_df_plot.annotate(v, (v, k), va=&#34;center&#34;)
+
+        # nv_ed_plot.annotate(v, (v,k),va=&#39;center&#39;)
+
+    plt.show()
+
+
+def make_custom_horizontal_bar(df, col, titulo, x_label, y_label, legend):
+    &#34;&#34;&#34;Creates a horizontal bar chart from a pre-formatted DataFrame.
+
+    Generates a horizontal bar chart from a DataFrame that&#39;s already been prepared
+    with specific column names (&#34;Category&#34; for categories and &#34;count&#34; for values).
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame, containing a &#39;Category&#39; column
+                                and a &#39;count&#39; column.
+        col (str): Unused in this function, but kept for consistency with other
+                    charting functions.
+        titulo (str): The title of the chart.
+        x_label (str): The label for the x-axis.
+        y_label (str): The label for the y-axis.
+        legend (bool): True to display a legend, False to hide it.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;Category&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;C&#39;], &#39;count&#39;: [4, 2, 3, 1]})
+        &gt;&gt;&gt; make_custom_horizontal_bar(df, &#34;col&#34;, &#34;Carreras o especialidades&#34;, &#34;Total&#34;, &#34;Carreras / Especialidades&#34;, False)
+    &#34;&#34;&#34;
+    # Making a plot for this column.
+    fig = plt.figure(figsize=(9, 5))
+
+    # aux_df = make_df(df, col, &#34;categorias&#34;, &#34;conteo&#34;)
+
+    aux_df_plot = df.plot(kind=&#34;barh&#34;, title=f&#34;{titulo} \n&#34;, legend=legend)
+
+    aux_df_column_uniques = get_column_uniques(df, &#34;Category&#34;)
+
+    aux_df_plot.set_yticks(
+        [k for k, v in enumerate(aux_df_column_uniques)], minor=False
+    )
+
+    aux_df_plot.set_yticklabels(
+        [i for i in aux_df_column_uniques],
+        fontdict=None,
+        minor=False,
+    )
+
+    aux_df_plot.set_xlabel(f&#34;{x_label}&#34;)
+    aux_df_plot.set_ylabel(f&#34;{y_label}&#34;)
+
+    cat_values = [i for i in df[&#34;count&#34;].value_counts().keys()]
+
+    # Plot annotations.
+    for k, v in enumerate(cat_values):
+        aux_df_plot.annotate(v, (v, k), va=&#34;center&#34;)
+
+        # nv_ed_plot.annotate(v, (v,k),va=&#39;center&#39;)
+
+    plt.show()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="milanesas.eda_helper.explode_pie"><code class="name flex">
+<span>def <span class="ident">explode_pie</span></span>(<span>pie_size)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a list of values to explode slices of a pie chart.</p>
+<p>Creates a list of random values between 0.01 and 0.05, suitable for
+visually exploding slices of a pie chart. The number of values in the
+list is determined by the <code>pie_size</code> argument.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pie_size</code></strong></dt>
+<dd>An integer representing the number of slices in the pie chart.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A list of floating-point values between 0.01 and 0.05, with a length
+equal to <code>pie_size</code>.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; imp_df = pd.DataFrame({'A': [10, 20, 30]})
+&gt;&gt;&gt; explode_values = explode_pie(imp_df.size)
+&gt;&gt;&gt; print(explode_values)  # Example output: [0.03546542, 0.01237543, 0.04892357]
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def explode_pie(pie_size):
+    &#34;&#34;&#34;Generates a list of values to explode slices of a pie chart.
+
+    Creates a list of random values between 0.01 and 0.05, suitable for
+    visually exploding slices of a pie chart. The number of values in the
+    list is determined by the `pie_size` argument.
+
+    Args:
+        pie_size: An integer representing the number of slices in the pie chart.
+
+    Returns:
+        A list of floating-point values between 0.01 and 0.05, with a length
+        equal to `pie_size`.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; imp_df = pd.DataFrame({&#39;A&#39;: [10, 20, 30]})
+        &gt;&gt;&gt; explode_values = explode_pie(imp_df.size)
+        &gt;&gt;&gt; print(explode_values)  # Example output: [0.03546542, 0.01237543, 0.04892357]
+    &#34;&#34;&#34;
+    exp = [random.uniform(0.01, 0.05) for i in range(0, pie_size)]
+    return exp</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.get_column_uniques"><code class="name flex">
+<span>def <span class="ident">get_column_uniques</span></span>(<span>df, col)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prints unique values in a DataFrame column, handling semicolon-separated lists.</p>
+<p>Prints the unique values found within a specified column of a DataFrame.
+Treats semicolon-separated values within cells as individual elements.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The DataFrame to analyze.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to extract unique values from.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'exp_en_IT': ['A;B;C', 'A;B', 'D']})
+&gt;&gt;&gt; print_column_uniques(df, &quot;exp_en_IT&quot;)
+{'A', 'B', 'C', 'D'}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_column_uniques(df, col):
+    &#34;&#34;&#34;Prints unique values in a DataFrame column, handling semicolon-separated lists.
+
+    Prints the unique values found within a specified column of a DataFrame.
+    Treats semicolon-separated values within cells as individual elements.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame to analyze.
+        col (str): The name of the column to extract unique values from.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;exp_en_IT&#39;: [&#39;A;B;C&#39;, &#39;A;B&#39;, &#39;D&#39;]})
+        &gt;&gt;&gt; print_column_uniques(df, &#34;exp_en_IT&#34;)
+        {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;}
+    &#34;&#34;&#34;
+
+    return list(
+        set(itertools.chain.from_iterable([i.split(&#34;;&#34;) for i in df[col].dropna()]))
+    )</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.get_normal_uniques_col_count"><code class="name flex">
+<span>def <span class="ident">get_normal_uniques_col_count</span></span>(<span>df, col)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Counts occurrences of unique values (including those within semicolon-separated lists), normalizing counts by row count.</p>
+<p>Calculates the count of each unique value within a specified column of a DataFrame,
+handling cases where cells contain multiple values separated by semicolons. Normalizes
+the counts by dividing them by the total number of rows in the DataFrame.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The input DataFrame.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to analyze.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>A dictionary where keys represent unique values from the column and values
+represent their normalized counts (fraction of total rows).</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'educacion': ['A;B', 'A', 'A;C', 'B']})
+&gt;&gt;&gt; normalized_counts = get_normal_uniques_col_count(df, &quot;educacion&quot;)
+&gt;&gt;&gt; print(normalized_counts)
+{'A': 0.75, 'B': 0.5, 'C': 0.25}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_normal_uniques_col_count(df, col):
+    &#34;&#34;&#34;Counts occurrences of unique values (including those within semicolon-separated lists), normalizing counts by row count.
+
+    Calculates the count of each unique value within a specified column of a DataFrame,
+    handling cases where cells contain multiple values separated by semicolons. Normalizes
+    the counts by dividing them by the total number of rows in the DataFrame.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+
+    Returns:
+        dict: A dictionary where keys represent unique values from the column and values
+            represent their normalized counts (fraction of total rows).
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;educacion&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;A;C&#39;, &#39;B&#39;]})
+        &gt;&gt;&gt; normalized_counts = get_normal_uniques_col_count(df, &#34;educacion&#34;)
+        &gt;&gt;&gt; print(normalized_counts)
+        {&#39;A&#39;: 0.75, &#39;B&#39;: 0.5, &#39;C&#39;: 0.25}
+    &#34;&#34;&#34;
+
+    c = set(
+        itertools.chain.from_iterable(
+            [i.split(&#34;;&#34;) for i in df[col].value_counts(normalize=True).keys()]
+        )
+    )
+    cats = {i: 0 for i in c}
+    for i in c:
+        cats[i] = df[df[col].str.contains(i)].shape[0]
+
+    return cats</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.get_percentage"><code class="name flex">
+<span>def <span class="ident">get_percentage</span></span>(<span>value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Formats a value as a percentage string.</p>
+<p>Converts a numerical value into a percentage representation, rounded to the
+nearest integer, and returns it as a formatted string with a percentage sign.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code></dt>
+<dd>The numerical value to convert to a percentage.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The formatted percentage string (e.g., "42%").</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; percentage_string = get_percentage(0.4235)
+&gt;&gt;&gt; print(percentage_string)  # Output: &quot;42%&quot;
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_percentage(value):
+    &#34;&#34;&#34;Formats a value as a percentage string.
+
+    Converts a numerical value into a percentage representation, rounded to the
+    nearest integer, and returns it as a formatted string with a percentage sign.
+
+    Args:
+        value (float): The numerical value to convert to a percentage.
+
+    Returns:
+        str: The formatted percentage string (e.g., &#34;42%&#34;).
+
+    Example:
+        &gt;&gt;&gt; percentage_string = get_percentage(0.4235)
+        &gt;&gt;&gt; print(percentage_string)  # Output: &#34;42%&#34;
+    &#34;&#34;&#34;
+    # Multiply the value by 100 to get the percentage.
+    percentage = value * 100
+
+    # Round the percentage to the nearest integer value.
+    percentage = round(percentage)
+
+    return f&#34;{percentage}%&#34;</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.get_uniques_col_count"><code class="name flex">
+<span>def <span class="ident">get_uniques_col_count</span></span>(<span>df, col)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Counts occurrences of unique values (including those within semicolon-separated lists).</p>
+<p>Calculates the count of each unique value within a specified column of a DataFrame,
+handling cases where cells contain multiple values separated by semicolons.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The input DataFrame.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to analyze.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>A dictionary where keys represent unique values from the column and values
+represent their counts.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'educacion': ['A;B', 'A', 'A;C', 'B']})
+&gt;&gt;&gt; counts = get_uniques_col_count(df, &quot;educacion&quot;)
+&gt;&gt;&gt; print(counts)
+{'A': 3, 'B': 2, 'C': 1}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_uniques_col_count(df, col):
+    &#34;&#34;&#34;Counts occurrences of unique values (including those within semicolon-separated lists).
+
+    Calculates the count of each unique value within a specified column of a DataFrame,
+    handling cases where cells contain multiple values separated by semicolons.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+
+    Returns:
+        dict: A dictionary where keys represent unique values from the column and values
+            represent their counts.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;educacion&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;A;C&#39;, &#39;B&#39;]})
+        &gt;&gt;&gt; counts = get_uniques_col_count(df, &#34;educacion&#34;)
+        &gt;&gt;&gt; print(counts)
+        {&#39;A&#39;: 3, &#39;B&#39;: 2, &#39;C&#39;: 1}
+    &#34;&#34;&#34;
+    c = set(
+        itertools.chain.from_iterable(
+            [i.split(&#34;;&#34;) for i in df[col].value_counts().keys()]
+        )
+    )
+    cats = {i: 0 for i in c}
+    for i in c:
+        cats[i] = df[df[col].str.contains(i)].shape[0]
+
+    return cats</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_custom_horizontal_bar"><code class="name flex">
+<span>def <span class="ident">make_custom_horizontal_bar</span></span>(<span>df, col, titulo, x_label, y_label, legend)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a horizontal bar chart from a pre-formatted DataFrame.</p>
+<p>Generates a horizontal bar chart from a DataFrame that's already been prepared
+with specific column names ("Category" for categories and "count" for values).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The input DataFrame, containing a 'Category' column
+and a 'count' column.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Unused in this function, but kept for consistency with other
+charting functions.</dd>
+<dt><strong><code>titulo</code></strong> :&ensp;<code>str</code></dt>
+<dd>The title of the chart.</dd>
+<dt><strong><code>x_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>The label for the x-axis.</dd>
+<dt><strong><code>y_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>The label for the y-axis.</dd>
+<dt><strong><code>legend</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True to display a legend, False to hide it.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'Category': ['A', 'B', 'A', 'C'], 'count': [4, 2, 3, 1]})
+&gt;&gt;&gt; make_custom_horizontal_bar(df, &quot;col&quot;, &quot;Carreras o especialidades&quot;, &quot;Total&quot;, &quot;Carreras / Especialidades&quot;, False)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_custom_horizontal_bar(df, col, titulo, x_label, y_label, legend):
+    &#34;&#34;&#34;Creates a horizontal bar chart from a pre-formatted DataFrame.
+
+    Generates a horizontal bar chart from a DataFrame that&#39;s already been prepared
+    with specific column names (&#34;Category&#34; for categories and &#34;count&#34; for values).
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame, containing a &#39;Category&#39; column
+                                and a &#39;count&#39; column.
+        col (str): Unused in this function, but kept for consistency with other
+                    charting functions.
+        titulo (str): The title of the chart.
+        x_label (str): The label for the x-axis.
+        y_label (str): The label for the y-axis.
+        legend (bool): True to display a legend, False to hide it.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;Category&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;C&#39;], &#39;count&#39;: [4, 2, 3, 1]})
+        &gt;&gt;&gt; make_custom_horizontal_bar(df, &#34;col&#34;, &#34;Carreras o especialidades&#34;, &#34;Total&#34;, &#34;Carreras / Especialidades&#34;, False)
+    &#34;&#34;&#34;
+    # Making a plot for this column.
+    fig = plt.figure(figsize=(9, 5))
+
+    # aux_df = make_df(df, col, &#34;categorias&#34;, &#34;conteo&#34;)
+
+    aux_df_plot = df.plot(kind=&#34;barh&#34;, title=f&#34;{titulo} \n&#34;, legend=legend)
+
+    aux_df_column_uniques = get_column_uniques(df, &#34;Category&#34;)
+
+    aux_df_plot.set_yticks(
+        [k for k, v in enumerate(aux_df_column_uniques)], minor=False
+    )
+
+    aux_df_plot.set_yticklabels(
+        [i for i in aux_df_column_uniques],
+        fontdict=None,
+        minor=False,
+    )
+
+    aux_df_plot.set_xlabel(f&#34;{x_label}&#34;)
+    aux_df_plot.set_ylabel(f&#34;{y_label}&#34;)
+
+    cat_values = [i for i in df[&#34;count&#34;].value_counts().keys()]
+
+    # Plot annotations.
+    for k, v in enumerate(cat_values):
+        aux_df_plot.annotate(v, (v, k), va=&#34;center&#34;)
+
+        # nv_ed_plot.annotate(v, (v,k),va=&#39;center&#39;)
+
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_dataframe"><code class="name flex">
+<span>def <span class="ident">make_dataframe</span></span>(<span>df, col, cat_col, count_col)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_dataframe(df, col, cat_col, count_col):
+    # Drop all rows with float values from the DataFrame.
+    df = df.dropna(subset=[col])
+
+    # Get all unique categories in the column.
+    categories = set(
+        itertools.chain.from_iterable([i.split(&#34;;&#34;) for i in df[col].values])
+    )
+
+    # Create a dictionary to store the category counts.
+    category_counts = {}
+    for category in categories:
+        category_counts[category] = df[df[col].str.contains(category)].shape[0]
+
+    # Create a new DataFrame from the category counts dictionary.
+    new_df = pd.DataFrame(data=category_counts.items(), columns=[cat_col, count_col])
+
+    return new_df</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_df"><code class="name flex">
+<span>def <span class="ident">make_df</span></span>(<span>df, col, x_label, y_label)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a DataFrame counting occurrences of unique values (including those within semicolon-separated lists).</p>
+<p>Constructs a new DataFrame that tallies the number of occurrences of each unique
+value within a specified column of a given DataFrame. Handles cases where cells
+contain multiple values separated by semicolons.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The input DataFrame.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to analyze.</dd>
+<dt><strong><code>x_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>The label for the column containing unique values in the output DataFrame.</dd>
+<dt><strong><code>y_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>The label for the column containing counts in the output DataFrame.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame</code></dt>
+<dd>A new DataFrame with two columns:
+- x_label: Contains the unique values from the specified column.
+- y_label: Contains the counts of those values.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import pandas as pd
+df = pd.DataFrame({'educacion': ['A;B', 'A', 'C;B', 'D']})
+new_df = make_df(df, "educacion", "categories", "count")
+print(new_df)
+categories
+count
+0
+A
+2
+1
+B
+2
+2
+C
+1
+3
+D
+1</p>
+</blockquote>
+</blockquote>
+</blockquote></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_df(df, col, x_label, y_label):
+    &#34;&#34;&#34;Creates a DataFrame counting occurrences of unique values (including those within semicolon-separated lists).
+
+    Constructs a new DataFrame that tallies the number of occurrences of each unique
+    value within a specified column of a given DataFrame. Handles cases where cells
+    contain multiple values separated by semicolons.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+        x_label (str): The label for the column containing unique values in the output DataFrame.
+        y_label (str): The label for the column containing counts in the output DataFrame.
+
+    Returns:
+        pandas.DataFrame: A new DataFrame with two columns:
+            - x_label: Contains the unique values from the specified column.
+            - y_label: Contains the counts of those values.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;educacion&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;C;B&#39;, &#39;D&#39;]})
+        &gt;&gt;&gt; new_df = make_df(df, &#34;educacion&#34;, &#34;categories&#34;, &#34;count&#34;)
+        &gt;&gt;&gt; print(new_df)
+       categories  count
+        0          A      2
+        1          B      2
+        2          C      1
+        3          D      1
+    &#34;&#34;&#34;
+
+    c = set(
+        itertools.chain.from_iterable(
+            [i.split(&#34;;&#34;) for i in df[col].value_counts().keys()]
+        )
+    )
+    cats = {i: 0 for i in c}
+    for i in c:
+        df[col] = df[col].fillna(False)
+        cats[i] = df[df[col].str.contains(i)].shape[0]
+
+    df = pd.DataFrame(
+        data=[i for i in cats.items()],
+        columns=[x_label.replace(&#34; &#34;, &#34;&#34;), y_label.replace(&#34; &#34;, &#34;&#34;)],
+    )  # .set_index(x_label.replace(&#39; &#39;,&#39;&#39;))
+
+    return df</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_horizontal_bar"><code class="name flex">
+<span>def <span class="ident">make_horizontal_bar</span></span>(<span>df, col, titulo, x_label, y_label, legend)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a horizontal bar chart for a specified column in a DataFrame.</p>
+<p>Generates a horizontal bar chart that visualizes the counts of unique values
+within a given column of a DataFrame.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The input DataFrame.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to visualize.</dd>
+<dt><strong><code>titulo</code></strong> :&ensp;<code>str</code></dt>
+<dd>The title of the chart.</dd>
+<dt><strong><code>x_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>The label for the x-axis.</dd>
+<dt><strong><code>y_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>The label for the y-axis.</dd>
+<dt><strong><code>legend</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True to display a legend, False to hide it.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'carr_especialidades': ['A', 'B', 'A', 'C', 'B']})
+&gt;&gt;&gt; make_horizontal_bar(df, &quot;carr_especialidades&quot;, &quot;Carreras o especialidades&quot;, &quot;Total&quot;, &quot;Carreras / Especialidades&quot;, False)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_horizontal_bar(df, col, titulo, x_label, y_label, legend):
+    &#34;&#34;&#34;Creates a horizontal bar chart for a specified column in a DataFrame.
+
+    Generates a horizontal bar chart that visualizes the counts of unique values
+    within a given column of a DataFrame.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to visualize.
+        titulo (str): The title of the chart.
+        x_label (str): The label for the x-axis.
+        y_label (str): The label for the y-axis.
+        legend (bool): True to display a legend, False to hide it.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;carr_especialidades&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;C&#39;, &#39;B&#39;]})
+        &gt;&gt;&gt; make_horizontal_bar(df, &#34;carr_especialidades&#34;, &#34;Carreras o especialidades&#34;, &#34;Total&#34;, &#34;Carreras / Especialidades&#34;, False)
+    &#34;&#34;&#34;
+    # Making a plot for this column.
+    fig = plt.figure(figsize=(9, 5))
+
+    aux_df = make_df(df, col, &#34;categorias&#34;, &#34;conteo&#34;)
+
+    aux_df_plot = aux_df.plot(kind=&#34;barh&#34;, title=f&#34;{titulo} \n&#34;, legend=legend)
+
+    aux_df_column_uniques = get_column_uniques(df, col)
+
+    aux_df_plot.set_yticks(
+        [k for k, v in enumerate(aux_df_column_uniques)], minor=False
+    )
+
+    aux_df_plot.set_yticklabels(
+        [i for i in aux_df_column_uniques],
+        fontdict=None,
+        minor=False,
+    )
+
+    aux_df_plot.set_xlabel(f&#34;{x_label}&#34;)
+    aux_df_plot.set_ylabel(f&#34;{y_label}&#34;)
+
+    cat_values = [i for i in aux_df.conteo.value_counts().keys()]
+
+    # Plot annotations.
+    for k, v in enumerate(cat_values):
+        aux_df_plot.annotate(v, (v, k), va=&#34;center&#34;)
+
+        # nv_ed_plot.annotate(v, (v,k),va=&#39;center&#39;)
+
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_horizontal_grouped_chart"><code class="name flex">
+<span>def <span class="ident">make_horizontal_grouped_chart</span></span>(<span>df, g1, g2, col, labels, config)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a horizontal grouped bar chart comparing values between two groups.</p>
+<p>Generates a horizontal bar chart with two sets of bars, one for each group
+(g1 and g2), comparing their counts for unique values in a specified column.
+Labels, title, and other chart elements are customized using a configuration
+dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The DataFrame containing the data.</dd>
+<dt><strong><code>g1</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>A subset of the DataFrame representing the first group.</dd>
+<dt><strong><code>g2</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>A subset of the DataFrame representing the second group.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to compare values for.</dd>
+<dt><strong><code>labels</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of unique values from the column to use as labels.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A configuration dictionary with keys:
+- title (str): The title of the chart.
+- c1_label (str): The label for the first group's bars.
+- c2_label (str): The label for the second group's bars.
+- xlabel (str): The label for the x-axis.
+- ylabel (str): The label for the y-axis.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If the specified column does not exist in the DataFrame.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'exp_en_IT': ['A', 'B', 'A', 'C', 'B'], 'gender': ['MAN', 'WOMAN', 'MAN', 'MAN', 'WOMAN']})
+&gt;&gt;&gt; gen = df.groupby('gender')
+&gt;&gt;&gt; group_config = {
+...     'title': &quot;exp_en_IT by Gender&quot;,
+...     'c1_label': &quot;MAN&quot;,
+...     'c2_label': &quot;WOMAN&quot;,
+...     'xlabel': &quot;Count&quot;,
+...     'ylabel': &quot;exp_en_IT level&quot;
+... }
+&gt;&gt;&gt; make_horizontal_grouped_chart(df, gen.get_group(&quot;MAN&quot;), gen.get_group(&quot;WOMAN&quot;), &quot;exp_en_IT&quot;, df[&quot;exp_en_IT&quot;].unique(), group_config)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_horizontal_grouped_chart(df, g1, g2, col, labels, config):
+    &#34;&#34;&#34;Creates a horizontal grouped bar chart comparing values between two groups.
+
+    Generates a horizontal bar chart with two sets of bars, one for each group
+    (g1 and g2), comparing their counts for unique values in a specified column.
+    Labels, title, and other chart elements are customized using a configuration
+    dictionary.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the data.
+        g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
+        g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
+        col (str): The name of the column to compare values for.
+        labels (list): A list of unique values from the column to use as labels.
+        config (dict): A configuration dictionary with keys:
+            - title (str): The title of the chart.
+            - c1_label (str): The label for the first group&#39;s bars.
+            - c2_label (str): The label for the second group&#39;s bars.
+            - xlabel (str): The label for the x-axis.
+            - ylabel (str): The label for the y-axis.
+
+    Raises:
+        ValueError: If the specified column does not exist in the DataFrame.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;exp_en_IT&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;C&#39;, &#39;B&#39;], &#39;gender&#39;: [&#39;MAN&#39;, &#39;WOMAN&#39;, &#39;MAN&#39;, &#39;MAN&#39;, &#39;WOMAN&#39;]})
+        &gt;&gt;&gt; gen = df.groupby(&#39;gender&#39;)
+        &gt;&gt;&gt; group_config = {
+        ...     &#39;title&#39;: &#34;exp_en_IT by Gender&#34;,
+        ...     &#39;c1_label&#39;: &#34;MAN&#34;,
+        ...     &#39;c2_label&#39;: &#34;WOMAN&#34;,
+        ...     &#39;xlabel&#39;: &#34;Count&#34;,
+        ...     &#39;ylabel&#39;: &#34;exp_en_IT level&#34;
+        ... }
+        &gt;&gt;&gt; make_horizontal_grouped_chart(df, gen.get_group(&#34;MAN&#34;), gen.get_group(&#34;WOMAN&#34;), &#34;exp_en_IT&#34;, df[&#34;exp_en_IT&#34;].unique(), group_config)
+    &#34;&#34;&#34;
+    g1_count = get_uniques_col_count(g1, col)
+    g2_count = get_uniques_col_count(g2, col)
+    labels = get_column_uniques(df, col)
+
+    # Values
+    g1_val = [g1_count.get(i, 0) for i in labels]
+    g2_val = [g2_count.get(i, 0) for i in labels]
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.barh(x - width / 2, g1_val, width, label=config.get(&#34;c1_label&#34;, &#34;&#34;))
+    rects2 = ax.barh(x + width / 2, g2_val, width, label=config.get(&#34;c2_label&#34;, &#34;&#34;))
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel(config.get(&#34;xlabel&#34;, &#34;&#34;))
+    ax.set_title(config.get(&#34;title&#34;, &#34;&#34;))
+    ax.set_xlabel(config.get(&#34;ylabel&#34;, &#34;&#34;))
+    ax.set_yticks(x)
+    ax.set_yticklabels(labels)
+    ax.legend()
+
+    for k, v in enumerate(rects1):
+        height = v.get_height()
+
+        if len(labels) &gt;= 10:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 1.5
+        else:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 1
+
+        # x_pos = v.get_x() + v.get_width() / 2
+        y_pos = v.get_y() - height * 0.5
+        # y_pos = v.get_y() + height
+
+        # Add the annotation text
+        if int(g1_val[k]) != 0:
+            # x_pos = v.get_x() + v.get_width()
+            # ax.annotate(str(g1_val[k]), (x_pos, y_pos), ha=&#39;center&#39;, va=&#39;bottom&#39;)
+            ax.annotate(&#34;  &#34; + str(g1_val[k]), (x_pos, y_pos), ha=&#34;center&#34;, va=&#34;bottom&#34;)
+
+    for k, v in enumerate(rects2):
+        height = v.get_height()
+
+        # Set the position of the annotation text
+        # x_pos = v.get_x() + v.get_width()+1
+
+        if len(labels) &gt;= 10:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 1
+        else:
+            # Set the position of the annotation text
+            x_pos = v.get_x() + v.get_width() + 0.5
+
+        # x_pos = v.get_x() + v.get_width() + 5
+        # x_pos = v.get_x() + v.get_width() / 2
+        y_pos = v.get_y() - height * 0.05 - 0.05
+        # y_pos = v.get_y() + height
+
+        # Add the annotation text
+        if int(g2_val[k]) != 0:
+            # ax.annotate(str(g2_val[k]), (x_pos, y_pos), ha=&#39;center&#39;, va=&#39;bottom&#39;)
+            ax.annotate(&#34;  &#34; + str(g2_val[k]), (x_pos, y_pos), ha=&#34;center&#34;, va=&#34;bottom&#34;)
+
+    fig.tight_layout()
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_normalized_df"><code class="name flex">
+<span>def <span class="ident">make_normalized_df</span></span>(<span>df, col)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a DataFrame with normalized counts of unique values, handling semicolon-separated lists.</p>
+<p>Constructs a new DataFrame that displays the percentage of occurrences for each unique
+value within a specified column of a given DataFrame. Values in cells can be separated
+by semicolons, and each unique value within a semicolon-separated list is counted
+separately.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The input DataFrame.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to analyze.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame</code></dt>
+<dd>A new DataFrame with two columns:
+- categories: Contains the unique values from the specified column.
+- total count: Contains the percentage of occurrences for each unique value.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'imp_ed_formal': ['A;B', 'A', 'C;B', 'A;B']})
+&gt;&gt;&gt; normalized_counts = make_normalized_df(df, &quot;imp_ed_formal&quot;)
+&gt;&gt;&gt; print(normalized_counts)
+      total count
+categories
+A           50.0
+B           50.0
+C           25.0
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_normalized_df(df, col):
+    &#34;&#34;&#34;Creates a DataFrame with normalized counts of unique values, handling semicolon-separated lists.
+
+    Constructs a new DataFrame that displays the percentage of occurrences for each unique
+    value within a specified column of a given DataFrame. Values in cells can be separated
+    by semicolons, and each unique value within a semicolon-separated list is counted
+    separately.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame.
+        col (str): The name of the column to analyze.
+
+    Returns:
+        pandas.DataFrame: A new DataFrame with two columns:
+            - categories: Contains the unique values from the specified column.
+            - total count: Contains the percentage of occurrences for each unique value.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;imp_ed_formal&#39;: [&#39;A;B&#39;, &#39;A&#39;, &#39;C;B&#39;, &#39;A;B&#39;]})
+        &gt;&gt;&gt; normalized_counts = make_normalized_df(df, &#34;imp_ed_formal&#34;)
+        &gt;&gt;&gt; print(normalized_counts)
+              total count
+        categories
+        A           50.0
+        B           50.0
+        C           25.0
+    &#34;&#34;&#34;
+    # Split each row content by &#34;;&#34;
+    df_split = df[col].str.split(&#34;;&#34;).explode()
+
+    # Count how many times each unique value appears in the column
+    df_counts = df_split.value_counts().reset_index(name=&#34;total count&#34;)
+
+    # Calculate the percentage of times each category appears in the column
+    df_counts[&#34;total count&#34;] = (
+        df_counts[&#34;total count&#34;] / df_counts[&#34;total count&#34;].sum() * 100
+    )
+
+    # Rename the columns
+    df_counts.columns = [&#34;categories&#34;, &#34;total count&#34;]
+
+    # Set the index to the &#39;categories&#39; column
+    df_counts = df_counts.set_index(&#34;categories&#34;)
+
+    return df_counts</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.make_vertical_grouped_chart"><code class="name flex">
+<span>def <span class="ident">make_vertical_grouped_chart</span></span>(<span>df, g1, g2, col, labels, config)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a vertical grouped bar chart comparing values between two groups.</p>
+<p>Generates a vertical bar chart with two sets of bars, one for each group
+(g1 and g2), comparing their counts for unique values in a specified column.
+Labels, title, and other chart elements are customized using a configuration
+dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The DataFrame containing the data.</dd>
+<dt><strong><code>g1</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>A subset of the DataFrame representing the first group.</dd>
+<dt><strong><code>g2</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>A subset of the DataFrame representing the second group.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to compare values for.</dd>
+<dt><strong><code>labels</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of unique values from the column to use as labels.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A configuration dictionary with keys:
+- title (str): The title of the chart.
+- c1_label (str): The label for the first group's bars.
+- c2_label (str): The label for the second group's bars.
+- xlabel (str): The label for the x-axis.
+- ylabel (str): The label for the y-axis.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If the specified column does not exist in the DataFrame.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'edad_actual': [25, 30, 30, 25, 35], 'gender': ['MAN', 'WOMAN', 'MAN', 'MAN', 'WOMAN']})
+&gt;&gt;&gt; gen = df.groupby('gender')
+&gt;&gt;&gt; group_config = {
+...     'title': &quot;edad_actual by Gender&quot;,
+...     'c1_label': &quot;Hombres&quot;,
+...     'c2_label': &quot;Mujeres&quot;,
+...     'xlabel': &quot;edad_actual level&quot;,
+...     'ylabel': &quot;Count&quot;
+... }
+&gt;&gt;&gt; make_vertical_grouped_chart(df, gen.get_group(&quot;MAN&quot;), gen.get_group(&quot;WOMAN&quot;), &quot;edad_actual&quot;, df[&quot;edad_actual&quot;].unique(), group_config)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_vertical_grouped_chart(df, g1, g2, col, labels, config):
+    &#34;&#34;&#34;Creates a vertical grouped bar chart comparing values between two groups.
+
+    Generates a vertical bar chart with two sets of bars, one for each group
+    (g1 and g2), comparing their counts for unique values in a specified column.
+    Labels, title, and other chart elements are customized using a configuration
+    dictionary.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the data.
+        g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
+        g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
+        col (str): The name of the column to compare values for.
+        labels (list): A list of unique values from the column to use as labels.
+        config (dict): A configuration dictionary with keys:
+            - title (str): The title of the chart.
+            - c1_label (str): The label for the first group&#39;s bars.
+            - c2_label (str): The label for the second group&#39;s bars.
+            - xlabel (str): The label for the x-axis.
+            - ylabel (str): The label for the y-axis.
+
+    Raises:
+        ValueError: If the specified column does not exist in the DataFrame.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;edad_actual&#39;: [25, 30, 30, 25, 35], &#39;gender&#39;: [&#39;MAN&#39;, &#39;WOMAN&#39;, &#39;MAN&#39;, &#39;MAN&#39;, &#39;WOMAN&#39;]})
+        &gt;&gt;&gt; gen = df.groupby(&#39;gender&#39;)
+        &gt;&gt;&gt; group_config = {
+        ...     &#39;title&#39;: &#34;edad_actual by Gender&#34;,
+        ...     &#39;c1_label&#39;: &#34;Hombres&#34;,
+        ...     &#39;c2_label&#39;: &#34;Mujeres&#34;,
+        ...     &#39;xlabel&#39;: &#34;edad_actual level&#34;,
+        ...     &#39;ylabel&#39;: &#34;Count&#34;
+        ... }
+        &gt;&gt;&gt; make_vertical_grouped_chart(df, gen.get_group(&#34;MAN&#34;), gen.get_group(&#34;WOMAN&#34;), &#34;edad_actual&#34;, df[&#34;edad_actual&#34;].unique(), group_config)
+    &#34;&#34;&#34;
+
+    g1_count = get_uniques_col_count(g1, col)
+    g2_count = get_uniques_col_count(g2, col)
+    labels = get_column_uniques(df, col)
+
+    # Values
+    g1_val = [g1_count.get(i, 0) for i in labels]
+    g2_val = [g2_count.get(i, 0) for i in labels]
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width / 2, g1_val, width, label=config.get(&#34;c1_label&#34;, &#34;&#34;))
+    rects2 = ax.bar(x + width / 2, g2_val, width, label=config.get(&#34;c2_label&#34;, &#34;&#34;))
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel(config.get(&#34;ylabel&#34;, &#34;&#34;))
+    ax.set_title(config.get(&#34;title&#34;, &#34;&#34;))
+    ax.set_xlabel(config.get(&#34;xlabel&#34;, &#34;&#34;))
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    def autolabel(rects):
+        &#34;&#34;&#34;Attach a text label above each bar in *rects*, displaying its height.&#34;&#34;&#34;
+        for rect in rects:
+            height = rect.get_height()
+
+            ax.annotate(
+                &#34;{}&#34;.format(height),
+                xy=(rect.get_x() + rect.get_width() / 2, height),
+                xytext=(0, 3),  # 3 points vertical offset
+                textcoords=&#34;offset points&#34;,
+                ha=&#34;center&#34;,
+                va=&#34;bottom&#34;,
+            )
+
+    autolabel(rects1)
+    autolabel(rects2)
+
+    fig.tight_layout()
+
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.percentage_to_normal"><code class="name flex">
+<span>def <span class="ident">percentage_to_normal</span></span>(<span>val)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Formats a Series of percentage values with rounding and percentage sign.</p>
+<p>Converts a Series of values to percentages, rounds them to one decimal place,
+and adds a percentage sign. The output is formatted as a string.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>val</code></strong> :&ensp;<code>pandas.Series</code></dt>
+<dd>A Series containing numerical values.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.Series</code></dt>
+<dd>A Series with the same index as the input, but containing</dd>
+</dl>
+<p>formatted percentage strings.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; s = pd.Series([0.1234, 0.5678, 0.9012])
+&gt;&gt;&gt; formatted_percentages = percentage_to_normal(s)
+&gt;&gt;&gt; print(formatted_percentages)
+0    12.3 %
+1    56.8 %
+2    90.1 %
+dtype: object
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def percentage_to_normal(val):
+    &#34;&#34;&#34;Formats a Series of percentage values with rounding and percentage sign.
+
+    Converts a Series of values to percentages, rounds them to one decimal place,
+    and adds a percentage sign. The output is formatted as a string.
+
+    Args:
+        val (pandas.Series): A Series containing numerical values.
+
+    Returns:
+        pandas.Series: A Series with the same index as the input, but containing
+        formatted percentage strings.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; s = pd.Series([0.1234, 0.5678, 0.9012])
+        &gt;&gt;&gt; formatted_percentages = percentage_to_normal(s)
+        &gt;&gt;&gt; print(formatted_percentages)
+        0    12.3 %
+        1    56.8 %
+        2    90.1 %
+        dtype: object
+    &#34;&#34;&#34;
+
+    return val.mul(100).round(1).astype(str) + &#34; %&#34;</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.print_column_uniques"><code class="name flex">
+<span>def <span class="ident">print_column_uniques</span></span>(<span>df, col)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_column_uniques(df, col):
+    print(set(itertools.chain.from_iterable([i.split(&#34;;&#34;) for i in df[col]])))</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.random_hex"><code class="name flex">
+<span>def <span class="ident">random_hex</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_hex():
+    # List of dark Material colors
+    dark_material_colors = [
+        &#34;#121212&#34;,
+        &#34;#1E88E5&#34;,
+        &#34;#00897B&#34;,
+        &#34;#39BBB0&#34;,
+        &#34;#26C6DA&#34;,
+        &#34;#42A5F5&#34;,
+        &#34;#64B5F6&#34;,
+        &#34;#9C27B0&#34;,
+        &#34;#E91E63&#34;,
+        &#34;#F44336&#34;,
+        &#34;#D81B60&#34;,
+        &#34;#880E4F&#34;,
+    ]
+
+    # Choose a random color from the list
+    random_color = random.choice(dark_material_colors)
+
+    return random_color</code></pre>
+</details>
+</dd>
+<dt id="milanesas.eda_helper.replace_column_content"><code class="name flex">
+<span>def <span class="ident">replace_column_content</span></span>(<span>df, col, repl)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replaces values in a DataFrame column using a replacement dictionary.</p>
+<p>Modifies a DataFrame column in-place by replacing values based on a
+provided dictionary. The replacement dictionary maps original values to
+their desired replacements. Regular expressions can be used for flexible
+matching.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The DataFrame to modify.</dd>
+<dt><strong><code>col</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the column to modify.</dd>
+<dt><strong><code>repl</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary containing replacement mappings, where keys
+represent original values and values represent their replacements.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If the specified column does not exist in the DataFrame.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'genero': ['HOMBRE', 'MUJER', 'NO COMPARTO']})
+&gt;&gt;&gt; gen_repl = {
+...     &quot;HOMBRE&quot;: &quot;MAN&quot;,
+...     &quot;MUJER&quot;: &quot;WOMAN&quot;,
+...     &quot;NO COMPARTO&quot;: &quot;DONT SHARE&quot;,
+... }
+&gt;&gt;&gt; replace_column_content(df, &quot;genero&quot;, gen_repl)
+&gt;&gt;&gt; print(df)  # Output:
+               genero
+0                 MAN
+1              WOMAN
+2       DONT SHARE
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def replace_column_content(df, col, repl):
+    &#34;&#34;&#34;Replaces values in a DataFrame column using a replacement dictionary.
+
+    Modifies a DataFrame column in-place by replacing values based on a
+    provided dictionary. The replacement dictionary maps original values to
+    their desired replacements. Regular expressions can be used for flexible
+    matching.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame to modify.
+        col (str): The name of the column to modify.
+        repl (dict): A dictionary containing replacement mappings, where keys
+            represent original values and values represent their replacements.
+
+    Raises:
+        ValueError: If the specified column does not exist in the DataFrame.
+
+    Example:
+        &gt;&gt;&gt; import pandas as pd
+        &gt;&gt;&gt; df = pd.DataFrame({&#39;genero&#39;: [&#39;HOMBRE&#39;, &#39;MUJER&#39;, &#39;NO COMPARTO&#39;]})
+        &gt;&gt;&gt; gen_repl = {
+        ...     &#34;HOMBRE&#34;: &#34;MAN&#34;,
+        ...     &#34;MUJER&#34;: &#34;WOMAN&#34;,
+        ...     &#34;NO COMPARTO&#34;: &#34;DONT SHARE&#34;,
+        ... }
+        &gt;&gt;&gt; replace_column_content(df, &#34;genero&#34;, gen_repl)
+        &gt;&gt;&gt; print(df)  # Output:
+                       genero
+        0                 MAN
+        1              WOMAN
+        2       DONT SHARE
+    &#34;&#34;&#34;
+
+    df[col].replace(
+        repl,
+        regex=True,
+        inplace=True,
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="milanesas" href="index.html">milanesas</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="milanesas.eda_helper.explode_pie" href="#milanesas.eda_helper.explode_pie">explode_pie</a></code></li>
+<li><code><a title="milanesas.eda_helper.get_column_uniques" href="#milanesas.eda_helper.get_column_uniques">get_column_uniques</a></code></li>
+<li><code><a title="milanesas.eda_helper.get_normal_uniques_col_count" href="#milanesas.eda_helper.get_normal_uniques_col_count">get_normal_uniques_col_count</a></code></li>
+<li><code><a title="milanesas.eda_helper.get_percentage" href="#milanesas.eda_helper.get_percentage">get_percentage</a></code></li>
+<li><code><a title="milanesas.eda_helper.get_uniques_col_count" href="#milanesas.eda_helper.get_uniques_col_count">get_uniques_col_count</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_custom_horizontal_bar" href="#milanesas.eda_helper.make_custom_horizontal_bar">make_custom_horizontal_bar</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_dataframe" href="#milanesas.eda_helper.make_dataframe">make_dataframe</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_df" href="#milanesas.eda_helper.make_df">make_df</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_horizontal_bar" href="#milanesas.eda_helper.make_horizontal_bar">make_horizontal_bar</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_horizontal_grouped_chart" href="#milanesas.eda_helper.make_horizontal_grouped_chart">make_horizontal_grouped_chart</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_normalized_df" href="#milanesas.eda_helper.make_normalized_df">make_normalized_df</a></code></li>
+<li><code><a title="milanesas.eda_helper.make_vertical_grouped_chart" href="#milanesas.eda_helper.make_vertical_grouped_chart">make_vertical_grouped_chart</a></code></li>
+<li><code><a title="milanesas.eda_helper.percentage_to_normal" href="#milanesas.eda_helper.percentage_to_normal">percentage_to_normal</a></code></li>
+<li><code><a title="milanesas.eda_helper.print_column_uniques" href="#milanesas.eda_helper.print_column_uniques">print_column_uniques</a></code></li>
+<li><code><a title="milanesas.eda_helper.random_hex" href="#milanesas.eda_helper.random_hex">random_hex</a></code></li>
+<li><code><a title="milanesas.eda_helper.replace_column_content" href="#milanesas.eda_helper.replace_column_content">replace_column_content</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
