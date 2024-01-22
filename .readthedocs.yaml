@@ -23,6 +23,7 @@ project:
   source: milanesas
 
 # Optional, define the version to link to when building docs
-version: 0.1.9
+# version: 0.1.9
+
 
 
