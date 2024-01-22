@@ -1,35 +1,28 @@
-# Read the Docs configuration file for Sphinx projects
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
-
-# Required
 version: 2
 
-# Set the OS, Python version and other tools you might need
 build:
-  os: ubuntu-22.04
-  tools:
-    python: "3.12"
-    # You can also specify other tool versions:
-    # nodejs: "20"
-    # rust: "1.70"
-    # golang: "1.20"
+  os: ubuntu-20.04
 
-# Build documentation in the "docs/" directory with Sphinx
 sphinx:
-  configuration: docs/conf.py
-  # You can configure Sphinx to use a different builder, for instance use the dirhtml builder for simpler URLs
-  # builder: "dirhtml"
-  # Fail on all warnings to avoid broken references
-  # fail_on_warning: true
+  configuration: docs/mkdocs.yml
+  builder: mkdocs
+  install_requirements: poetry install
 
-# Optionally build your docs in additional formats such as PDF and ePub
-# formats:
-#   - pdf
-#   - epub
+python:
+  install:
+    # Install dependencies from pyproject.toml
+    - requirements: pyproject.toml
+    # Optional: install dev dependencies for doc generation
+    - requirements: docs/requirements.txt
 
-# Optional but recommended, declare the Python requirements required
-# to build your documentation
-# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
-# python:
-#   install:
-#     - requirements: docs/requirements.txt
+formats:
+  - html
+
+project:
+  docs: docs/milanesas
+  source: milanesas
+
+# Optional, define the version to link to when building docs
+version: 0.1.9
+
+
