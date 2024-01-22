@@ -1,4 +1,4 @@
-version: 2
+version: 2.5
 
 build:
   os: ubuntu-20.04
@@ -23,7 +23,7 @@ project:
   source: milanesas
 
 # Optional, define the version to link to when building docs
-# version: 0.1.9
+version: 0.1.9
 
 
 
