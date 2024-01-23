@@ -1,8 +1,13 @@
-site_name: My Docs
+site_name: Milanesas 
+site_url: https://example.com/
 
+nav:
+  - Home: index.md
+  - About: about.md
+  - Nose que mierda!: no_se_que.md
 
 theme:
-  name: material
+  name: readthedocs 
   features:
     - navigation.instant
     - navigation.sections
