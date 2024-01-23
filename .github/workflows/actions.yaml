@@ -18,6 +18,8 @@ jobs:
           python -m pip install poetry
       - name: Check Poetry project
         run: poetry config
+      - name: Print test py data
+        run : echo <span class="math-inline">\{\{ env\.TEST\_PIPY\_KEY \}\}\
       - name: Install dependencies
         run: poetry install
       - name: Build package.
