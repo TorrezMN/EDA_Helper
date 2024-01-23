@@ -1,0 +1,26 @@
+name: Poetry Publish Dry Run (test branch)
+
+on:
+  push:
+    branches: [ test ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Replace with your desired Python version
+      - name: Install Poetry
+        run: |
+          python -m pip install poetry
+      - name: Check Poetry project
+        run: poetry config
+      - name: Install dependencies
+        run: poetry install
+      - name: Run Poetry Publish dry-run
+        run: poetry publish -r testpypi --build --dry-run
+
+
