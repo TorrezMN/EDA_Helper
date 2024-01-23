@@ -20,6 +20,12 @@ jobs:
         run: poetry config
       - name: Install dependencies
         run: poetry install
+      - name: Build package.
+        run: poetry build
+      - name: Config poetry repo.
+        run: poetry config repositories.testpypi https://test.pypi.org/legacy/
+      - name: Set pipy key.
+        run: poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
       - name: Run Poetry Publish dry-run
         run: poetry publish -r testpypi --build --dry-run
 
