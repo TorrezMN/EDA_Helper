@@ -1,0 +1,19 @@
+site_name: My Docs
+
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.livesearch
+    - search.fuzzy
+    - search.highlight
+  # Customize the search bar position (optional)
+  search.placeholder: "Search documentation..."
+  search.icon: material/magnifying-glass
+
+plugins:
+  - search
+

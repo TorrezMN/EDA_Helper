@@ -1,0 +1,699 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Module milanesas.eda_helper - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-milanesaseda_helper" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module milanesas.eda_helper
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Module milanesas.eda_helper
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Module milanesas.eda_helper
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="module-milanesaseda_helper">Module milanesas.eda_helper</h1>
+<h2 id="functions">Functions</h2>
+<p><code>explode_pie(pie_size)</code>
+:   Generates a list of values to explode slices of a pie chart.</p>
+<pre><code>Creates a list of random values between 0.01 and 0.05, suitable for
+visually exploding slices of a pie chart. The number of values in the
+list is determined by the `pie_size` argument.
+
+Args:
+    pie_size: An integer representing the number of slices in the pie chart.
+
+Returns:
+    A list of floating-point values between 0.01 and 0.05, with a length
+    equal to `pie_size`.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; imp_df = pd.DataFrame({'A': [10, 20, 30]})
+    &gt;&gt;&gt; explode_values = explode_pie(imp_df.size)
+    &gt;&gt;&gt; print(explode_values)  # Example output: [0.03546542, 0.01237543, 0.04892357]
+</code></pre>
+<p><code>get_column_uniques(df, col)</code>
+:   Prints unique values in a DataFrame column, handling semicolon-separated lists.</p>
+<pre><code>Prints the unique values found within a specified column of a DataFrame.
+Treats semicolon-separated values within cells as individual elements.
+
+Args:
+    df (pandas.DataFrame): The DataFrame to analyze.
+    col (str): The name of the column to extract unique values from.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'exp_en_IT': ['A;B;C', 'A;B', 'D']})
+    &gt;&gt;&gt; print_column_uniques(df, "exp_en_IT")
+    {'A', 'B', 'C', 'D'}
+</code></pre>
+<p><code>get_normal_uniques_col_count(df, col)</code>
+:   Counts occurrences of unique values (including those within semicolon-separated lists), normalizing counts by row count.</p>
+<pre><code>Calculates the count of each unique value within a specified column of a DataFrame,
+handling cases where cells contain multiple values separated by semicolons. Normalizes
+the counts by dividing them by the total number of rows in the DataFrame.
+
+Args:
+    df (pandas.DataFrame): The input DataFrame.
+    col (str): The name of the column to analyze.
+
+Returns:
+    dict: A dictionary where keys represent unique values from the column and values
+        represent their normalized counts (fraction of total rows).
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'educacion': ['A;B', 'A', 'A;C', 'B']})
+    &gt;&gt;&gt; normalized_counts = get_normal_uniques_col_count(df, "educacion")
+    &gt;&gt;&gt; print(normalized_counts)
+    {'A': 0.75, 'B': 0.5, 'C': 0.25}
+</code></pre>
+<p><code>get_percentage(value)</code>
+:   Formats a value as a percentage string.</p>
+<pre><code>Converts a numerical value into a percentage representation, rounded to the
+nearest integer, and returns it as a formatted string with a percentage sign.
+
+Args:
+    value (float): The numerical value to convert to a percentage.
+
+Returns:
+    str: The formatted percentage string (e.g., "42%").
+
+Example:
+    &gt;&gt;&gt; percentage_string = get_percentage(0.4235)
+    &gt;&gt;&gt; print(percentage_string)  # Output: "42%"
+</code></pre>
+<p><code>get_uniques_col_count(df, col)</code>
+:   Counts occurrences of unique values (including those within semicolon-separated lists).</p>
+<pre><code>Calculates the count of each unique value within a specified column of a DataFrame,
+handling cases where cells contain multiple values separated by semicolons.
+
+Args:
+    df (pandas.DataFrame): The input DataFrame.
+    col (str): The name of the column to analyze.
+
+Returns:
+    dict: A dictionary where keys represent unique values from the column and values
+        represent their counts.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'educacion': ['A;B', 'A', 'A;C', 'B']})
+    &gt;&gt;&gt; counts = get_uniques_col_count(df, "educacion")
+    &gt;&gt;&gt; print(counts)
+    {'A': 3, 'B': 2, 'C': 1}
+</code></pre>
+<p><code>make_custom_horizontal_bar(df, col, titulo, x_label, y_label, legend)</code>
+:   Creates a horizontal bar chart from a pre-formatted DataFrame.</p>
+<pre><code>Generates a horizontal bar chart from a DataFrame that's already been prepared
+with specific column names ("Category" for categories and "count" for values).
+
+Args:
+    df (pandas.DataFrame): The input DataFrame, containing a 'Category' column
+                            and a 'count' column.
+    col (str): Unused in this function, but kept for consistency with other
+                charting functions.
+    titulo (str): The title of the chart.
+    x_label (str): The label for the x-axis.
+    y_label (str): The label for the y-axis.
+    legend (bool): True to display a legend, False to hide it.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'Category': ['A', 'B', 'A', 'C'], 'count': [4, 2, 3, 1]})
+    &gt;&gt;&gt; make_custom_horizontal_bar(df, "col", "Carreras o especialidades", "Total", "Carreras / Especialidades", False)
+</code></pre>
+<p><code>make_dataframe(df, col, cat_col, count_col)</code>
+:   </p>
+<p><code>make_df(df, col, x_label, y_label)</code>
+:   Creates a DataFrame counting occurrences of unique values (including those within semicolon-separated lists).</p>
+<pre><code>Constructs a new DataFrame that tallies the number of occurrences of each unique
+value within a specified column of a given DataFrame. Handles cases where cells
+contain multiple values separated by semicolons.
+
+Args:
+    df (pandas.DataFrame): The input DataFrame.
+    col (str): The name of the column to analyze.
+    x_label (str): The label for the column containing unique values in the output DataFrame.
+    y_label (str): The label for the column containing counts in the output DataFrame.
+
+Returns:
+    pandas.DataFrame: A new DataFrame with two columns:
+        - x_label: Contains the unique values from the specified column.
+        - y_label: Contains the counts of those values.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'educacion': ['A;B', 'A', 'C;B', 'D']})
+    &gt;&gt;&gt; new_df = make_df(df, "educacion", "categories", "count")
+    &gt;&gt;&gt; print(new_df)
+   categories  count
+    0          A      2
+    1          B      2
+    2          C      1
+    3          D      1
+</code></pre>
+<p><code>make_horizontal_bar(df, col, titulo, x_label, y_label, legend)</code>
+:   Creates a horizontal bar chart for a specified column in a DataFrame.</p>
+<pre><code>Generates a horizontal bar chart that visualizes the counts of unique values
+within a given column of a DataFrame.
+
+Args:
+    df (pandas.DataFrame): The input DataFrame.
+    col (str): The name of the column to visualize.
+    titulo (str): The title of the chart.
+    x_label (str): The label for the x-axis.
+    y_label (str): The label for the y-axis.
+    legend (bool): True to display a legend, False to hide it.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'carr_especialidades': ['A', 'B', 'A', 'C', 'B']})
+    &gt;&gt;&gt; make_horizontal_bar(df, "carr_especialidades", "Carreras o especialidades", "Total", "Carreras / Especialidades", False)
+</code></pre>
+<p><code>make_horizontal_grouped_chart(df, g1, g2, col, labels, config)</code>
+:   Creates a horizontal grouped bar chart comparing values between two groups.</p>
+<pre><code>Generates a horizontal bar chart with two sets of bars, one for each group
+(g1 and g2), comparing their counts for unique values in a specified column.
+Labels, title, and other chart elements are customized using a configuration
+dictionary.
+
+Args:
+    df (pandas.DataFrame): The DataFrame containing the data.
+    g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
+    g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
+    col (str): The name of the column to compare values for.
+    labels (list): A list of unique values from the column to use as labels.
+    config (dict): A configuration dictionary with keys:
+        - title (str): The title of the chart.
+        - c1_label (str): The label for the first group's bars.
+        - c2_label (str): The label for the second group's bars.
+        - xlabel (str): The label for the x-axis.
+        - ylabel (str): The label for the y-axis.
+
+Raises:
+    ValueError: If the specified column does not exist in the DataFrame.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'exp_en_IT': ['A', 'B', 'A', 'C', 'B'], 'gender': ['MAN', 'WOMAN', 'MAN', 'MAN', 'WOMAN']})
+    &gt;&gt;&gt; gen = df.groupby('gender')
+    &gt;&gt;&gt; group_config = {
+    ...     'title': "exp_en_IT by Gender",
+    ...     'c1_label': "MAN",
+    ...     'c2_label': "WOMAN",
+    ...     'xlabel': "Count",
+    ...     'ylabel': "exp_en_IT level"
+    ... }
+    &gt;&gt;&gt; make_horizontal_grouped_chart(df, gen.get_group("MAN"), gen.get_group("WOMAN"), "exp_en_IT", df["exp_en_IT"].unique(), group_config)
+</code></pre>
+<p><code>make_normalized_df(df, col)</code>
+:   Creates a DataFrame with normalized counts of unique values, handling semicolon-separated lists.</p>
+<pre><code>Constructs a new DataFrame that displays the percentage of occurrences for each unique
+value within a specified column of a given DataFrame. Values in cells can be separated
+by semicolons, and each unique value within a semicolon-separated list is counted
+separately.
+
+Args:
+    df (pandas.DataFrame): The input DataFrame.
+    col (str): The name of the column to analyze.
+
+Returns:
+    pandas.DataFrame: A new DataFrame with two columns:
+        - categories: Contains the unique values from the specified column.
+        - total count: Contains the percentage of occurrences for each unique value.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'imp_ed_formal': ['A;B', 'A', 'C;B', 'A;B']})
+    &gt;&gt;&gt; normalized_counts = make_normalized_df(df, "imp_ed_formal")
+    &gt;&gt;&gt; print(normalized_counts)
+          total count
+    categories
+    A           50.0
+    B           50.0
+    C           25.0
+</code></pre>
+<p><code>make_vertical_grouped_chart(df, g1, g2, col, labels, config)</code>
+:   Creates a vertical grouped bar chart comparing values between two groups.</p>
+<pre><code>Generates a vertical bar chart with two sets of bars, one for each group
+(g1 and g2), comparing their counts for unique values in a specified column.
+Labels, title, and other chart elements are customized using a configuration
+dictionary.
+
+Args:
+    df (pandas.DataFrame): The DataFrame containing the data.
+    g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
+    g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
+    col (str): The name of the column to compare values for.
+    labels (list): A list of unique values from the column to use as labels.
+    config (dict): A configuration dictionary with keys:
+        - title (str): The title of the chart.
+        - c1_label (str): The label for the first group's bars.
+        - c2_label (str): The label for the second group's bars.
+        - xlabel (str): The label for the x-axis.
+        - ylabel (str): The label for the y-axis.
+
+Raises:
+    ValueError: If the specified column does not exist in the DataFrame.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'edad_actual': [25, 30, 30, 25, 35], 'gender': ['MAN', 'WOMAN', 'MAN', 'MAN', 'WOMAN']})
+    &gt;&gt;&gt; gen = df.groupby('gender')
+    &gt;&gt;&gt; group_config = {
+    ...     'title': "edad_actual by Gender",
+    ...     'c1_label': "Hombres",
+    ...     'c2_label': "Mujeres",
+    ...     'xlabel': "edad_actual level",
+    ...     'ylabel': "Count"
+    ... }
+    &gt;&gt;&gt; make_vertical_grouped_chart(df, gen.get_group("MAN"), gen.get_group("WOMAN"), "edad_actual", df["edad_actual"].unique(), group_config)
+</code></pre>
+<p><code>percentage_to_normal(val)</code>
+:   Formats a Series of percentage values with rounding and percentage sign.</p>
+<pre><code>Converts a Series of values to percentages, rounds them to one decimal place,
+and adds a percentage sign. The output is formatted as a string.
+
+Args:
+    val (pandas.Series): A Series containing numerical values.
+
+Returns:
+    pandas.Series: A Series with the same index as the input, but containing
+    formatted percentage strings.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; s = pd.Series([0.1234, 0.5678, 0.9012])
+    &gt;&gt;&gt; formatted_percentages = percentage_to_normal(s)
+    &gt;&gt;&gt; print(formatted_percentages)
+    0    12.3 %
+    1    56.8 %
+    2    90.1 %
+    dtype: object
+</code></pre>
+<p><code>print_column_uniques(df, col)</code>
+:   </p>
+<p><code>random_hex()</code>
+:   </p>
+<p><code>replace_column_content(df, col, repl)</code>
+:   Replaces values in a DataFrame column using a replacement dictionary.</p>
+<pre><code>Modifies a DataFrame column in-place by replacing values based on a
+provided dictionary. The replacement dictionary maps original values to
+their desired replacements. Regular expressions can be used for flexible
+matching.
+
+Args:
+    df (pandas.DataFrame): The DataFrame to modify.
+    col (str): The name of the column to modify.
+    repl (dict): A dictionary containing replacement mappings, where keys
+        represent original values and values represent their replacements.
+
+Raises:
+    ValueError: If the specified column does not exist in the DataFrame.
+
+Example:
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; df = pd.DataFrame({'genero': ['HOMBRE', 'MUJER', 'NO COMPARTO']})
+    &gt;&gt;&gt; gen_repl = {
+    ...     "HOMBRE": "MAN",
+    ...     "MUJER": "WOMAN",
+    ...     "NO COMPARTO": "DONT SHARE",
+    ... }
+    &gt;&gt;&gt; replace_column_content(df, "genero", gen_repl)
+    &gt;&gt;&gt; print(df)  # Output:
+                   genero
+    0                 MAN
+    1              WOMAN
+    2       DONT SHARE
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "search.livesearch", "search.fuzzy", "search.highlight"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>
