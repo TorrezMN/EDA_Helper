@@ -28,6 +28,7 @@ jobs:
       - name: Set pipy key.
         run: poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
       - name: Run Poetry Publish dry-run
-        run: poetry publish -r testpypi --build --dry-run
+        #run: poetry publish -r testpypi --build --dry-run
+        run: echo "yes" | poetry publish -r testpypi --build --dry-run
 
 
