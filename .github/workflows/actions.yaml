@@ -34,7 +34,7 @@ jobs:
         run: poetry version patch
       - name: Run Poetry Publish dry-run
         run: poetry publish -r testpypi --build --dry-run 
-      - name: Run Poetry Publish
-        run: poetry publish -r testpypi --build 
+      - name: Finish
+        run: echo "ITS ALL OK"
 
 
