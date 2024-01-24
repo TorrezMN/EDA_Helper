@@ -33,6 +33,8 @@ jobs:
       - name: Patch vercion
         run: poetry version patch
       - name: Run Poetry Publish dry-run
+        run: poetry publish -r testpypi --build --dry-run 
+      - name: Run Poetry Publish
         run: poetry publish -r testpypi --build 
 
 
