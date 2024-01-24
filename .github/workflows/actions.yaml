@@ -3,11 +3,7 @@ name: Poetry Publish Dry Run (test branch)
 on:
   push:
     branches: [ test ]
-  inputs:
-    input_value:
-      description: "Publish dry run? yes/no"
-      required: true
-      default: "yes"
+
 
 jobs:
   build:
@@ -32,8 +28,9 @@ jobs:
         run: poetry config repositories.testpypi https://test.pypi.org/legacy/
       - name: Set pipy key.
         run: poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
+      - name: Patch vercion
+        run: poetry version patch
       - name: Run Poetry Publish dry-run
-        #run: poetry publish -r testpypi --build --dry-run
-        run: poetry publish -r testpypi --build --dry-run ${{ github.event.inputs.input_value }}
+        run: poetry publish -r testpypi --build 
 
 
