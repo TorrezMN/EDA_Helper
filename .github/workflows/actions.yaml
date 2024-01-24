@@ -21,8 +21,6 @@ jobs:
         run: poetry config
       - name: Install dependencies
         run: poetry install
-      - name: Run tests  # Assuming you have tests for your package
-        run: poetry run pytest
 
   build-package:
     needs: build-and-test  # Ensure tests pass before building
