@@ -4,9 +4,8 @@ on:
   push:
     branches: [ test ]
 
-
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     environment: Pipy
     steps:
@@ -22,19 +21,31 @@ jobs:
         run: poetry config
       - name: Install dependencies
         run: poetry install
-      - name: Build package.
+      - name: Run tests  # Assuming you have tests for your package
+        run: poetry run pytest
+
+  build-package:
+    needs: build-and-test  # Ensure tests pass before building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build package
         run: poetry build
-      - name: Config poetry repo.
-        run: poetry config repositories.testpypi https://test.pypi.org/legacy/
-      - name: Set pipy key.
-        run: poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
-      - name: Config pipy
-        run: poetry config pypi-token.pypi ${{ secrets.TEST_PIPY_KEY }} 
-      - name: Patch vercion
+
+  publish-dry-run:
+    needs: build-package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure Poetry for testpypi
+        run: |
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
+          poetry config pypi-token.pypi ${{ secrets.TEST_PIPY_KEY }}
+      - name: Patch version
         run: poetry version patch
       - name: Run Poetry Publish dry-run
-        run: poetry publish -r testpypi --build --dry-run 
+        run: poetry publish -r testpypi --build --dry-run
       - name: Finish
         run: echo "ITS ALL OK"
-
 
