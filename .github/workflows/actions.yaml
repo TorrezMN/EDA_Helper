@@ -28,6 +28,8 @@ jobs:
         run: poetry config repositories.testpypi https://test.pypi.org/legacy/
       - name: Set pipy key.
         run: poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
+      - name: Config pipy
+        run: poetry config pypi-token.pypi ${{ secrets.TEST_PIPY_KEY }} 
       - name: Patch vercion
         run: poetry version patch
       - name: Run Poetry Publish dry-run
