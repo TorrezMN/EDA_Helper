@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-  publish-dry-run:
+  publis-or-dry-run:
     needs: build-package
     runs-on: ubuntu-latest
     steps:
@@ -47,6 +47,9 @@ jobs:
         run: poetry version patch
       - name: Run Poetry Publish dry-run
         run: poetry publish -r testpypi --build --dry-run
+      - name: Run command on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo 'esto ocurre solo en main!'
       - name: Finish
         run: echo "ITS ALL OK"
 
