@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-  publis-or-dry-run:
+  publish-or-dry-run:
     needs: build-package
     runs-on: ubuntu-latest
     steps:
