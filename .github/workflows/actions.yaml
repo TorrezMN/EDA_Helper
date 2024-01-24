@@ -27,8 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build package
-        run: poetry build
 
   publish-dry-run:
     needs: build-package
