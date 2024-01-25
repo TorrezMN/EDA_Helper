@@ -35,6 +35,8 @@ jobs:
     if: github.ref == 'refs/heads/test'  # Only run on the test branch
     steps:
       - uses: actions/checkout@v3
+      - name: Show poetr version.
+        run: poetry --version
       - name: Configure Poetry for testpypi
         run: |
           poetry config repositories.testpypi https://test.pypi.org/legacy/
