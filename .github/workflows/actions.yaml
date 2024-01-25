@@ -62,11 +62,15 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/docs'  # Only run on the docs branch
     steps:
-      - name: Show files.
-        run: ls -a
       - uses: actions/checkout@v3
-      - name: Build new documentation
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Replace 'x' with the desired Python version
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-material  # Replace with your desired theme
+          pip install mkdocs-git-revision-date-localized-plugin  # Optional plugin for localized dates
+      - name: Build documentation
         run: mkdocs build
-      - name: Publish new documentation
-        run: mkdocs gh-deploy
-
