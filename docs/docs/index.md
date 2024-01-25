@@ -3,6 +3,7 @@
 ## this is a test title.
 
 [EDA](eda_helper.md)
+
 [Home](index.md)
 [About](about.md)
 [Features](features.md)
@@ -10,23 +11,7 @@
 
 ## No se que mierda
 - 1-Esto es no se que mierda!
-- 1-Esto es no se que mierda!
-- 1-Esto es no se que mierda!
-- 1-Esto es no se que mierda!
-- 1-Esto es no se que mierda!
 
-## No se que otra mierda
-- 1-Esto es no se que mierda!
-## No se que otra mierda
-- 2-Esto es no se que mierda!
-## No se que otra mierda
-- 3-Esto es no se que mierda!
-## No se que otra mierda
-- 4-Esto es no se que mierda!
-## No se que otra mierda
-- 5-Esto es no se que mierda!
-## No se que otra mierda
-- 6-Esto es no se que mierda!
 ## No se que otra mierda
 - 7-Esto es no se que mierda!
 ## No se que otra mierda
