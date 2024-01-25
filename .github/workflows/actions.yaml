@@ -76,3 +76,13 @@ jobs:
         run: |
           cd docs/ 
           mkdocs build    
+          mkdocs gh-deploy                    
+      - name: Publish documentation
+        run: |
+          cd docs/ 
+          mkdocs gh-deploy                    
+      - name: Succesfull publish
+        run: echo "New documentation wass succesfully publish."
+
+
+
