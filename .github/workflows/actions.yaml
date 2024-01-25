@@ -35,8 +35,10 @@ jobs:
     if: github.ref == 'refs/heads/test'  # Only run on the test branch
     steps:
       - uses: actions/checkout@v3
-      - name: Show poetr version.
-        run: poetry --version
+      - name: Install Poetry and dependencies
+        run: |
+          python -m pip install poetry
+          poetry install
       - name: Configure Poetry for testpypi
         run: |
           poetry config repositories.testpypi https://test.pypi.org/legacy/
@@ -49,7 +51,7 @@ jobs:
       - name: Run Poetry Publish dry-run
         run: poetry publish -r testpypi --build --dry-run
 
-  publish:
+  publish_to_pipy:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  # Only run on the main branch
