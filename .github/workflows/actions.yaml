@@ -76,6 +76,9 @@ jobs:
         run: |
           cd docs/ 
           mkdocs build    
+      - name: Update local
+        run: |
+          git pull
       - name: Publish documentation
         run: |
           cd docs/ 
