@@ -8,6 +8,9 @@
 [Features](features.md)
 
 
+## No se que mierda
+- Esto es no se que mierda!
+
 
 ## Commands
 

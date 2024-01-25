@@ -2,11 +2,10 @@ name: Poetry Publish Dry Run (test branch)
 
 on:
   push:
-    branches: [ test ]
-
+    branches: [ test , main, docs]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     environment: Pipy
     steps:
@@ -18,23 +17,92 @@ jobs:
       - name: Install Poetry
         run: |
           python -m pip install poetry
+      - name: Test poetry version.
+        run: poetry --version
       - name: Check Poetry project
         run: poetry config
       - name: Install dependencies
         run: poetry install
-      - name: Build package.
-        run: poetry build
-      - name: Config poetry repo.
-        run: poetry config repositories.testpypi https://test.pypi.org/legacy/
-      - name: Set pipy key.
-        run: poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
-      - name: Config pipy
-        run: poetry config pypi-token.pypi ${{ secrets.TEST_PIPY_KEY }} 
-      - name: Patch vercion
+      - name: Install mkdocs
+        run: python -m pip install mkdocs
+
+  build-package:
+    needs: build-and-test  # Ensure tests pass before building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+  publish-dry-run:
+    needs: build-package
+    runs-on: ubuntu-latest
+    on:
+      push:
+        branches:
+          - test
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          python-version: '3.x'  # Replace with your desired Python version
+      - name: Install Poetry
+        run: |
+          python -m pip install poetry
+      - name: Configure Poetry for testpypi
+        run: |
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
+          poetry config pypi-token.pypi ${{ secrets.TEST_PIPY_KEY }}
+      - name: Patch version
         run: poetry version patch
       - name: Run Poetry Publish dry-run
-        run: poetry publish -r testpypi --build --dry-run 
+        run: poetry publish -r testpypi --build --dry-run
       - name: Finish
         run: echo "ITS ALL OK"
 
+  publish:
+    needs: build-package
+    runs-on: ubuntu-latest
+    on:
+      push:
+        branches:
+          - main
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          python-version: '3.x'  # Replace with your desired Python version
+      - name: Install Poetry
+        run: |
+          python -m pip install poetry
+      - name: Configure Poetry for testpypi
+        run: |
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
+          poetry config pypi-token.pypi ${{ secrets.TEST_PIPY_KEY }}
+      - name: Patch version
+        run: poetry version patch
+      - name: Run command on main branch
+        run: poetry publish -r testpypi --build 
+      - name: Finish
+        run: echo "ITS ALL OK"
+
+
+  publish_new_docs:
+    needs: build-package
+    runs-on: ubuntu-latest
+    on:
+      push:
+        branches:
+          - docs
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          python-version: '3.x'  # Replace with your desired Python version
+      - name: Install MKdocs
+        run: |
+          python -m pip install mkdocs
+      - name: Build new documentation.
+        run: cd docs/ && mkdocs build
+      - name: Publish new documentation.
+        run: cd docs/ && mkdocs gh-deploy    
+      - name: Finish
+        run: echo "ITS ALL OK"
 
