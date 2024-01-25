@@ -73,4 +73,4 @@ jobs:
           pip install mkdocs-material  # Replace with your desired theme
           pip install mkdocs-git-revision-date-localized-plugin  # Optional plugin for localized dates
       - name: Build documentation
-        run: mkdocs build
+        run: mkdocs -d build
