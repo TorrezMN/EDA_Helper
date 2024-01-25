@@ -2,7 +2,7 @@ name: Poetry Publish Dry Run (test branch)
 
 on:
   push:
-    branches: [ test , main]
+    branches: [ test , main, docs]
 
 jobs:
   build-and-test:
