@@ -62,6 +62,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/docs'  # Only run on the docs branch
     steps:
+      - name: Show files.
+        run: ls -a
       - uses: actions/checkout@v3
       - name: Build new documentation
         run: mkdocs build
