@@ -41,7 +41,6 @@ jobs:
           poetry install
       - name: Configure Poetry for pypi
         run: |
-          poetry config repositories.testpypi https://test.pypi.org/legacy/
           poetry config poetry config pypi-token.pypi ${{secrets.PIPY_TOK}} 
       - name: Update local
         run: |
