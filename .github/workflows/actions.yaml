@@ -29,7 +29,7 @@ jobs:
       - name: Install mkdocs
         run: python -m pip install mkdocs
 
-  publish:
+  publish_to_pipy:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  # Only run on the test branch
@@ -39,7 +39,7 @@ jobs:
         run: |
           python -m pip install poetry
           poetry install
-      - name: Configure Poetry for testpypi
+      - name: Configure Poetry for pypi
         run: |
           poetry config repositories.testpypi https://test.pypi.org/legacy/
           poetry config poetry config pypi-token.pypi ${{secrets.PIPY_TOK}} 
@@ -73,18 +73,6 @@ jobs:
       - name: Run Poetry Publish dry-run
         run: poetry publish -r testpypi --build --dry-run
 
-  publish_to_pipy:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'  # Only run on the main branch
-    steps:
-      - uses: actions/checkout@v3
-      - name: Configure Poetry for PyPI
-        run: poetry config pypi-token.pypi ${{ secrets.PYPI_KEY }}  # Use the correct secret for PyPI
-      - name: Patch version
-        run: poetry version patch
-      - name: Publish to PyPI
-        run: poetry publish
 
   publish_new_docs:
     needs: build-and-test
