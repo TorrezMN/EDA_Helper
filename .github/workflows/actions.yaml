@@ -41,7 +41,7 @@ jobs:
           poetry install
       - name: Configure Poetry for pypi
         run: |
-          poetry config poetry config pypi-token.pypi ${{secrets.PIPY_TOK}} 
+          poetry config pypi-token.pypi ${{secrets.PIPY_TOK}} 
       - name: Update local
         run: |
           git pull
