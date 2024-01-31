@@ -47,6 +47,8 @@ jobs:
           git pull
       - name: Patch version
         run: poetry version patch
+      - name: Test poetry version
+        run: poetry --version
       - name: Run Poetry Publish 
         run: poetry publish --build
 
