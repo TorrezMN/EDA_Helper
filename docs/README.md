@@ -2,37 +2,46 @@
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
 
-# Project Title
+# Milanesas / EDA helper 
 
-A brief description of what this project does and who it's for
+This package will help you to do some EDA related tasks. 
+It will help you to reduce the amount of code needed to do a simple chart. 
+Originally intended to work with **Jupyter Lab** but contains some help for **Django**.
 
 
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
+- Functions to draw simple graphs.
+- Functions for drawing orizontal and vertical comparative graphs.
+- Functions for transforming percentage values.
+- Functions for counting unique values.
+
 
 
 ## Installation
 
-Install my-project with npm
+Install my-project with pipy.
 
 ```bash
-  npm install my-project
-  cd my-project
+pip install milanesas
 ```
     
 ## Usage/Examples
 
-```javascript
-import Component from 'my-project'
+```python
+import pandas as pd
 
-function App() {
-  return <Component />
-}
+import milanesas.eda_helper as eh #Importing the library.
+
+
+df = pd.DataFrame({'Category': ['A', 'B', 'F', 'C'], 'count': [4, 2, 3, 1]})
+
+eh.make_custom_horizontal_bar(df, "col", "Custom horizontal bar chart.", "Count", "Category", False)
 ```
+
+This simple code will show the following chart.
+
+![Barchart demo.](./img/output_2_1.png)
 
 
 ## License
