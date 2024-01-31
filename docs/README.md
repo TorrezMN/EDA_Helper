@@ -3,6 +3,7 @@
 
 
 # Milanesas / EDA helper 
+---
 
 This package will help you to do some EDA related tasks. 
 It will help you to reduce the amount of code needed to do a simple chart. 
