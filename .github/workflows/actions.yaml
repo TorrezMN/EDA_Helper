@@ -66,6 +66,9 @@ jobs:
         run: |
           poetry config repositories.testpypi https://test.pypi.org/legacy/
           poetry config pypi-token.testpypi ${{ secrets.TEST_PIPY_KEY }}
+      - name: Update local
+        run: |
+          git pull
       - name: Patch version
         run: poetry version patch
       - name: Test poetry version
