@@ -70,8 +70,10 @@ jobs:
         run: poetry version patch
       - name: Test poetry version
         run: poetry --version
-      - name: Publish to testpipy 
+      - name: Publish dry run. 
         run: poetry publish -r testpypi --build --dry-run 
+      - name: Publish to test pipy. 
+        run: poetry publish -r testpypi --build
 
 
   publish_new_docs:
