@@ -52,7 +52,7 @@ jobs:
       - name: Run Poetry Publish 
         run: poetry publish --build
 
-  publish-dry-run:
+  publish_to_test_pipy:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/test'  # Only run on the test branch
