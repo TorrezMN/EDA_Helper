@@ -75,9 +75,6 @@ jobs:
         run: poetry --version
       - name: Publish to test pipy. 
         run: poetry publish -r testpypi --build
-      - name: Publish dry run. 
-        run: poetry publish -r testpypi --build --dry-run 
-
 
   publish_new_docs:
     needs: build-and-test
