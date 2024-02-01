@@ -52,7 +52,7 @@ eh.make_custom_horizontal_bar(
 
 This simple code will show the following chart.
 
-![Barchart demo.](./img/output_2_1.png)
+![Barchart demo.](https://github.com/TorrezMN/EDA_Helper/blob/main/docs/img/output_2_1.png)
 
 
 ## License
