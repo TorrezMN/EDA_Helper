@@ -35,9 +35,18 @@ import pandas as pd
 import milanesas.eda_helper as eh #Importing the library.
 
 
+# Create a test dataframe.
 df = pd.DataFrame({'Category': ['A', 'B', 'F', 'C'], 'count': [4, 2, 3, 1]})
 
-eh.make_custom_horizontal_bar(df, "col", "Custom horizontal bar chart.", "Count", "Category", False)
+
+# Make a horizontal barchart.
+eh.make_custom_horizontal_bar(
+    df, 
+    "col", 
+    "Custom horizontal bar chart.", 
+    "Count", 
+    "Category", 
+    False)
 ```
 
 This simple code will show the following chart.
