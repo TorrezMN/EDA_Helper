@@ -1,5 +1,6 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](
+<a href="https://www.freepik.es/foto-gratis/filete-frito-papas-fritas-ensalada-generado-ia_41280531.htm#query=milanesa&position=7&from_view=search&track=sph&uuid=3ea07f79-5848-48b5-b78f-9f0c1f572f52">Imagen de vecstock</a> en Freepik
 
 
 # Milanesas / EDA helper 
