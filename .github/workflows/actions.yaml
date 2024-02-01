@@ -50,8 +50,6 @@ jobs:
       - name: Test poetry version
         run: poetry --version
       - name: Run Poetry Publish 
-        run: poetry publish --build --dry-run
-      - name: Run Poetry Publish 
         run: poetry publish --build
 
   publish_to_test_pipy:
@@ -76,9 +74,7 @@ jobs:
       - name: Test poetry version
         run: poetry --version
       - name: Publish to test pipy. 
-        run: poetry publish -r testpypi --build --dry-run
-      - name: Publish to test pipy. 
-        run: poetry publish -r testpypi --build 
+        run: poetry publish -r testpypi --build --dry-run 
 
   publish_new_docs:
     needs: build-and-test
