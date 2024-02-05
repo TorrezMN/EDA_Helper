@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "milanesas"
-version = "0.1.36"
+version = "0.1.37"
 description = "A group of tools to do exploratory analysis."
 authors = ["Torrez, Milton <torrez.mn@gmail.com>"]
 homepage = "https://torrezmn.github.io/EDA_Helper/eda_helper/"
@@ -11,9 +11,9 @@ keywords = ["packaging", "data_science", "pandas"]
 readme = ["docs/README.md"]
 [tool.poetry.dependencies]
 python = "^3.8"
-pandas = "^1.4.3"  # Specifying the minimum pandas version
-matplotlib = "^3.6.0"  # Specifying the minimum matplotlib version
-numpy = "1.24.4"
+pandas = "^1.5.3"
+matplotlib = "^3.10.2"
+numpy = "^1.23.4"
 
 
 
