@@ -15,11 +15,10 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Replace with your desired version
-      - name: Update pip
-        run: pip install --upgrade pip
+          python-version: '3.8'  # Replace with your desired version
       - name: Install Poetry and dependencies
         run: |
+          pip3 install --upgrade pip 
           python -m pip install poetry
           poetry install
       - name: Install mkdocs  # Install mkdocs here for shared use
