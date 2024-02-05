@@ -13,7 +13,7 @@ readme = ["docs/README.md"]
 python = "^3.8"
 pandas = "^1.4.3"  # Specifying the minimum pandas version
 matplotlib = "^3.6.0"  # Specifying the minimum matplotlib version
-numpy = "^1.23.4"  # Adding numpy as an explicit dependency
+numpy = ""  # Adding numpy as an explicit dependency
 
 
 
