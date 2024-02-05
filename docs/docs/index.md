@@ -6,17 +6,8 @@
 
 [Home](index.md)
 
-[Test](la_mierda.md)
-
-[Test](la_mierda.md)
-
-[Test](la_mierda.md)
-
-[Test](la_mierda.md)
-
 [About](about.md)
 
-[Features](features.md)
 
 
 ## No se que mierda
