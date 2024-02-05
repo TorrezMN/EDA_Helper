@@ -41,6 +41,9 @@ jobs:
         run: |
           pip3 install --upgrade pip 
           python -m pip install poetry
+          poetry add numpy
+          poetry add pandas
+          poetry add matplotlib
           poetry install
       - name: Configure Poetry for pypi
         run: |
