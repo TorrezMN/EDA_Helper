@@ -11,9 +11,9 @@ keywords = ["packaging", "data_science", "pandas"]
 readme = ["docs/README.md"]
 [tool.poetry.dependencies]
 python = "^3.8"
-matplotlib="3.7.4" 
-numpy="1.24.4"  
-pandas="2.0.3"  
+matplotlib
+numpy
+pandas
 
 
 [build-system]
