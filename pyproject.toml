@@ -5,16 +5,16 @@ description = "A group of tools to do exploratory analysis."
 authors = ["Torrez, Milton <torrez.mn@gmail.com>"]
 homepage = "https://torrezmn.github.io/EDA_Helper/eda_helper/"
 packages = [
-    { include = "milanesas" },  # For code in a custom directory named "mypackage"
+{ include = "milanesas" },  # For code in a custom directory named "mypackage"
 ]
 keywords = ["packaging", "data_science", "pandas"]
 readme = ["docs/README.md"]
 [tool.poetry.dependencies]
 python = "^3.8"
-matplotlib==3.7.4
-numpy==1.24.4
-pandas==2.0.3
-pillow==10.2.0
+matplotlib=="3.7.4" 
+numpy=="1.24.4"  
+pandas=="2.0.3"  
+pillow=="10.2.0"   
 
 [build-system]
 requires = ["poetry-core"]
