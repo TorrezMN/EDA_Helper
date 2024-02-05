@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'  # Replace with your desired version
+      - name: Update pip
+        run: pip install --upgrade pip
       - name: Install Poetry and dependencies
         run: |
           python -m pip install poetry
