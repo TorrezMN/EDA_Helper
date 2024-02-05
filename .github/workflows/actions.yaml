@@ -47,10 +47,12 @@ jobs:
           git pull
       - name: Patch version
         run: poetry version patch
+      - name: Test poetry version
+        run: poetry --version
       - name: Run Poetry Publish 
         run: poetry publish --build
 
-  publish-dry-run:
+  publish_to_test_pipy:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/test'  # Only run on the test branch
@@ -69,9 +71,10 @@ jobs:
           git pull
       - name: Patch version
         run: poetry version patch
-      - name: Run Poetry Publish dry-run
-        run: poetry publish -r testpypi --build --dry-run
-
+      - name: Test poetry version
+        run: poetry --version
+      - name: Publish to test pipy. 
+        run: poetry publish -r testpypi --build 
 
   publish_new_docs:
     needs: build-and-test
