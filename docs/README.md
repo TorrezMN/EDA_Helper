@@ -1,9 +1,6 @@
 <<<<<<< HEAD
 
 ![Barchart demo.](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/mila.png)
-![Barchart demo.](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/mila.png)
-![Barchart demo.](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/mila.png)
-![Barchart demo.](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/mila.png)
 =======
 ![Milas](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/mila.png)
 >>>>>>> test
