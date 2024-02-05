@@ -76,13 +76,11 @@
               
                 <h1 id="module-milanesaseda_helper">Module milanesas.eda_helper</h1>
 <h2 id="functions">Functions</h2>
-<p><code>explode_pie(pie_size)</code>
-:   Generates a list of values to explode slices of a pie chart.</p>
-<pre><code>Creates a list of random values between 0.01 and 0.05, suitable for
+<p><code>explode_pie(pie_size)</code>:   Generates a list of values to explode slices of a pie chart.</p>
+<p>Creates a list of random values between 0.01 and 0.05, suitable for
 visually exploding slices of a pie chart. The number of values in the
-list is determined by the `pie_size` argument.
-
-Args:
+list is determined by the <code>pie_size</code> argument.</p>
+<pre><code>Args:
     pie_size: An integer representing the number of slices in the pie chart.
 
 Returns:
@@ -95,12 +93,10 @@ Example:
     &gt;&gt;&gt; explode_values = explode_pie(imp_df.size)
     &gt;&gt;&gt; print(explode_values)  # Example output: [0.03546542, 0.01237543, 0.04892357]
 </code></pre>
-<p><code>get_column_uniques(df, col)</code>
-:   Prints unique values in a DataFrame column, handling semicolon-separated lists.</p>
-<pre><code>Prints the unique values found within a specified column of a DataFrame.
-Treats semicolon-separated values within cells as individual elements.
-
-Args:
+<p><code>get_column_uniques(df, col)</code>:   Prints unique values in a DataFrame column, handling semicolon-separated lists.</p>
+<p>Prints the unique values found within a specified column of a DataFrame.
+Treats semicolon-separated values within cells as individual elements.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The DataFrame to analyze.
     col (str): The name of the column to extract unique values from.
 
@@ -110,13 +106,11 @@ Example:
     &gt;&gt;&gt; print_column_uniques(df, "exp_en_IT")
     {'A', 'B', 'C', 'D'}
 </code></pre>
-<p><code>get_normal_uniques_col_count(df, col)</code>
-:   Counts occurrences of unique values (including those within semicolon-separated lists), normalizing counts by row count.</p>
-<pre><code>Calculates the count of each unique value within a specified column of a DataFrame,
+<p><code>get_normal_uniques_col_count(df, col)</code>:   Counts occurrences of unique values (including those within semicolon-separated lists), normalizing counts by row count.</p>
+<p>Calculates the count of each unique value within a specified column of a DataFrame,
 handling cases where cells contain multiple values separated by semicolons. Normalizes
-the counts by dividing them by the total number of rows in the DataFrame.
-
-Args:
+the counts by dividing them by the total number of rows in the DataFrame.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The input DataFrame.
     col (str): The name of the column to analyze.
 
@@ -131,12 +125,10 @@ Example:
     &gt;&gt;&gt; print(normalized_counts)
     {'A': 0.75, 'B': 0.5, 'C': 0.25}
 </code></pre>
-<p><code>get_percentage(value)</code>
-:   Formats a value as a percentage string.</p>
-<pre><code>Converts a numerical value into a percentage representation, rounded to the
-nearest integer, and returns it as a formatted string with a percentage sign.
-
-Args:
+<p><code>get_percentage(value)</code>:   Formats a value as a percentage string.</p>
+<p>Converts a numerical value into a percentage representation, rounded to the
+nearest integer, and returns it as a formatted string with a percentage sign.</p>
+<pre><code>Args:
     value (float): The numerical value to convert to a percentage.
 
 Returns:
@@ -146,12 +138,10 @@ Example:
     &gt;&gt;&gt; percentage_string = get_percentage(0.4235)
     &gt;&gt;&gt; print(percentage_string)  # Output: "42%"
 </code></pre>
-<p><code>get_uniques_col_count(df, col)</code>
-:   Counts occurrences of unique values (including those within semicolon-separated lists).</p>
-<pre><code>Calculates the count of each unique value within a specified column of a DataFrame,
-handling cases where cells contain multiple values separated by semicolons.
-
-Args:
+<p><code>get_uniques_col_count(df, col)</code>:   Counts occurrences of unique values (including those within semicolon-separated lists).</p>
+<p>Calculates the count of each unique value within a specified column of a DataFrame,
+handling cases where cells contain multiple values separated by semicolons.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The input DataFrame.
     col (str): The name of the column to analyze.
 
@@ -166,12 +156,10 @@ Example:
     &gt;&gt;&gt; print(counts)
     {'A': 3, 'B': 2, 'C': 1}
 </code></pre>
-<p><code>make_custom_horizontal_bar(df, col, titulo, x_label, y_label, legend)</code>
-:   Creates a horizontal bar chart from a pre-formatted DataFrame.</p>
-<pre><code>Generates a horizontal bar chart from a DataFrame that's already been prepared
-with specific column names ("Category" for categories and "count" for values).
-
-Args:
+<p><code>make_custom_horizontal_bar(df, col, titulo, x_label, y_label, legend)</code>:   Creates a horizontal bar chart from a pre-formatted DataFrame.</p>
+<p>Generates a horizontal bar chart from a DataFrame that's already been prepared
+with specific column names ("Category" for categories and "count" for values).</p>
+<pre><code>Args:
     df (pandas.DataFrame): The input DataFrame, containing a 'Category' column
                             and a 'count' column.
     col (str): Unused in this function, but kept for consistency with other
@@ -186,15 +174,12 @@ Example:
     &gt;&gt;&gt; df = pd.DataFrame({'Category': ['A', 'B', 'A', 'C'], 'count': [4, 2, 3, 1]})
     &gt;&gt;&gt; make_custom_horizontal_bar(df, "col", "Carreras o especialidades", "Total", "Carreras / Especialidades", False)
 </code></pre>
-<p><code>make_dataframe(df, col, cat_col, count_col)</code>
-:   </p>
-<p><code>make_df(df, col, x_label, y_label)</code>
-:   Creates a DataFrame counting occurrences of unique values (including those within semicolon-separated lists).</p>
-<pre><code>Constructs a new DataFrame that tallies the number of occurrences of each unique
+<p><code>make_dataframe(df, col, cat_col, count_col)</code>:   </p>
+<p><code>make_df(df, col, x_label, y_label)</code>:   Creates a DataFrame counting occurrences of unique values (including those within semicolon-separated lists).</p>
+<p>Constructs a new DataFrame that tallies the number of occurrences of each unique
 value within a specified column of a given DataFrame. Handles cases where cells
-contain multiple values separated by semicolons.
-
-Args:
+contain multiple values separated by semicolons.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The input DataFrame.
     col (str): The name of the column to analyze.
     x_label (str): The label for the column containing unique values in the output DataFrame.
@@ -216,12 +201,10 @@ Example:
     2          C      1
     3          D      1
 </code></pre>
-<p><code>make_horizontal_bar(df, col, titulo, x_label, y_label, legend)</code>
-:   Creates a horizontal bar chart for a specified column in a DataFrame.</p>
-<pre><code>Generates a horizontal bar chart that visualizes the counts of unique values
-within a given column of a DataFrame.
-
-Args:
+<p><code>make_horizontal_bar(df, col, titulo, x_label, y_label, legend)</code>:   Creates a horizontal bar chart for a specified column in a DataFrame.</p>
+<p>Generates a horizontal bar chart that visualizes the counts of unique values
+within a given column of a DataFrame.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The input DataFrame.
     col (str): The name of the column to visualize.
     titulo (str): The title of the chart.
@@ -234,14 +217,12 @@ Example:
     &gt;&gt;&gt; df = pd.DataFrame({'carr_especialidades': ['A', 'B', 'A', 'C', 'B']})
     &gt;&gt;&gt; make_horizontal_bar(df, "carr_especialidades", "Carreras o especialidades", "Total", "Carreras / Especialidades", False)
 </code></pre>
-<p><code>make_horizontal_grouped_chart(df, g1, g2, col, labels, config)</code>
-:   Creates a horizontal grouped bar chart comparing values between two groups.</p>
-<pre><code>Generates a horizontal bar chart with two sets of bars, one for each group
+<p><code>make_horizontal_grouped_chart(df, g1, g2, col, labels, config)</code>:   Creates a horizontal grouped bar chart comparing values between two groups.</p>
+<p>Generates a horizontal bar chart with two sets of bars, one for each group
 (g1 and g2), comparing their counts for unique values in a specified column.
 Labels, title, and other chart elements are customized using a configuration
-dictionary.
-
-Args:
+dictionary.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The DataFrame containing the data.
     g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
     g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
@@ -270,14 +251,12 @@ Example:
     ... }
     &gt;&gt;&gt; make_horizontal_grouped_chart(df, gen.get_group("MAN"), gen.get_group("WOMAN"), "exp_en_IT", df["exp_en_IT"].unique(), group_config)
 </code></pre>
-<p><code>make_normalized_df(df, col)</code>
-:   Creates a DataFrame with normalized counts of unique values, handling semicolon-separated lists.</p>
-<pre><code>Constructs a new DataFrame that displays the percentage of occurrences for each unique
+<p><code>make_normalized_df(df, col)</code>:   Creates a DataFrame with normalized counts of unique values, handling semicolon-separated lists.</p>
+<p>Constructs a new DataFrame that displays the percentage of occurrences for each unique
 value within a specified column of a given DataFrame. Values in cells can be separated
 by semicolons, and each unique value within a semicolon-separated list is counted
-separately.
-
-Args:
+separately.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The input DataFrame.
     col (str): The name of the column to analyze.
 
@@ -297,14 +276,12 @@ Example:
     B           50.0
     C           25.0
 </code></pre>
-<p><code>make_vertical_grouped_chart(df, g1, g2, col, labels, config)</code>
-:   Creates a vertical grouped bar chart comparing values between two groups.</p>
-<pre><code>Generates a vertical bar chart with two sets of bars, one for each group
+<p><code>make_vertical_grouped_chart(df, g1, g2, col, labels, config)</code>:   Creates a vertical grouped bar chart comparing values between two groups.</p>
+<p>Generates a vertical bar chart with two sets of bars, one for each group
 (g1 and g2), comparing their counts for unique values in a specified column.
 Labels, title, and other chart elements are customized using a configuration
-dictionary.
-
-Args:
+dictionary.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The DataFrame containing the data.
     g1 (pandas.DataFrame): A subset of the DataFrame representing the first group.
     g2 (pandas.DataFrame): A subset of the DataFrame representing the second group.
@@ -333,12 +310,10 @@ Example:
     ... }
     &gt;&gt;&gt; make_vertical_grouped_chart(df, gen.get_group("MAN"), gen.get_group("WOMAN"), "edad_actual", df["edad_actual"].unique(), group_config)
 </code></pre>
-<p><code>percentage_to_normal(val)</code>
-:   Formats a Series of percentage values with rounding and percentage sign.</p>
-<pre><code>Converts a Series of values to percentages, rounds them to one decimal place,
-and adds a percentage sign. The output is formatted as a string.
-
-Args:
+<p><code>percentage_to_normal(val)</code>:   Formats a Series of percentage values with rounding and percentage sign.</p>
+<p>Converts a Series of values to percentages, rounds them to one decimal place,
+and adds a percentage sign. The output is formatted as a string.</p>
+<pre><code>Args:
     val (pandas.Series): A Series containing numerical values.
 
 Returns:
@@ -355,18 +330,14 @@ Example:
     2    90.1 %
     dtype: object
 </code></pre>
-<p><code>print_column_uniques(df, col)</code>
-:   </p>
-<p><code>random_hex()</code>
-:   </p>
-<p><code>replace_column_content(df, col, repl)</code>
-:   Replaces values in a DataFrame column using a replacement dictionary.</p>
-<pre><code>Modifies a DataFrame column in-place by replacing values based on a
+<p><code>print_column_uniques(df, col)</code>:   </p>
+<p><code>random_hex()</code>:   </p>
+<p><code>replace_column_content(df, col, repl)</code>:   Replaces values in a DataFrame column using a replacement dictionary.</p>
+<p>Modifies a DataFrame column in-place by replacing values based on a
 provided dictionary. The replacement dictionary maps original values to
 their desired replacements. Regular expressions can be used for flexible
-matching.
-
-Args:
+matching.</p>
+<pre><code>Args:
     df (pandas.DataFrame): The DataFrame to modify.
     col (str): The name of the column to modify.
     repl (dict): A dictionary containing replacement mappings, where keys
