@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "milanesas"
-version = "0.1.33"
-#description = "A group of tools to do exploratory analysis."
+version = "0.1.34"
+description = "A group of tools to do exploratory analysis."
 authors = ["Torrez, Milton <torrez.mn@gmail.com>"]
 homepage = "https://torrezmn.github.io/EDA_Helper/eda_helper/"
 packages = [
