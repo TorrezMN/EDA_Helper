@@ -1,15 +1,16 @@
-
-![Barchart demo.](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/output_2_1.png)
-
+![Milas](https://raw.githubusercontent.com/TorrezMN/EDA_Helper/main/docs/img/mila.png)
 <a href="https://www.freepik.es/foto-gratis/filete-frito-papas-fritas-ensalada-generado-ia_41280531.htm#query=milanesa&position=7&from_view=search&track=sph&uuid=3ea07f79-5848-48b5-b78f-9f0c1f572f52">Imagen de vecstock</a> en Freepik
-
 
 # Milanesas / EDA helper 
 ---
 
-This package will help you to do some EDA related tasks. 
-It will help you to reduce the amount of code needed to do a simple chart. 
-Originally intended to work with **Jupyter Lab** but contains some help for **Django**.
+Tired of wrangling data wrangling during EDA?  Unleash the Python data analysis beast within with milanesas, your new secret weapon for effortless Exploratory Data Analysis!
+
+Say goodbye to repetitive coding and hello to intuitive automation: visualize distributions, uncover missing values, identify relationships, and generate comprehensive reports – all with a few lines of code.
+
+Stop drowning in data, start diving for insights with milanesas!
+
+P.S. It's so user-friendly, even pandas ninjas will be impressed.
 
 
 ## Features
