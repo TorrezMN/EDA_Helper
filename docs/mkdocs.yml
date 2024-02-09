@@ -3,8 +3,8 @@ site_url: https://example.com/
 
 nav:
   - Home: index.md
-  - About: about.md
-  - Nose que mierda!: no_se_que.md
+  - EDA Helper: eda_helper.md
+
 
 theme:
   name: readthedocs 
